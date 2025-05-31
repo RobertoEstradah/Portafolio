@@ -9,11 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // === FUNCIONES ===
 
   function mostrarSaludo() {
-    if (isAnimating) return;
+    if (isAnimating || !mensajeSaludo) return; // Verificar si mensajeSaludo existe
     isAnimating = true;
     mensajeSaludo.textContent = "¡Hola! Bienvenido a mi portafolio de Ciencia de Datos 🚀";
-    mensajeSaludo.style.color = "#007acc";
-    mensajeSaludo.style.fontWeight = "bold";
+    // Color definido en CSS o como variable si se quiere dinámico
+    // mensajeSaludo.style.color = "#007acc"; // Se puede manejar con una clase CSS
+    // mensajeSaludo.style.fontWeight = "bold"; // Se puede manejar con una clase CSS
     mensajeSaludo.style.opacity = "1";
 
     mensajeSaludo.animate(
@@ -25,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
           [{ opacity: 1 }, { opacity: 0 }],
           { duration: 400, easing: "ease-in", fill: "forwards" }
         ).onfinish = () => {
-          mensajeSaludo.textContent = "";
+          mensajeSaludo.textContent = ""; // Limpiar el texto
+          mensajeSaludo.style.opacity = "0"; // Resetear opacidad para la próxima animación
           isAnimating = false;
         };
       }, 5000);
@@ -33,28 +35,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function ajustarHeaderScroll() {
-    header.style.backgroundColor = window.scrollY > 30 ? "#005f99" : "#1f73c2";
+    if (header) { // Verificar si header existe
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
   }
 
   function cerrarMenuMovil() {
-    if (window.innerWidth <= 768 && nav.classList.contains("show")) {
+    // Se puede usar window.matchMedia("(max-width: 768px)").matches para mayor robustez
+    if (window.innerWidth <= 768 && nav && nav.classList.contains("show") && toggleBtn) {
       nav.classList.remove("show");
       toggleBtn.setAttribute("aria-expanded", "false");
     }
   }
 
-  // === NUEVO: Toggle del menú móvil ===
-  toggleBtn.addEventListener("click", () => {
-    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
-    toggleBtn.setAttribute("aria-expanded", !expanded);
-    nav.classList.toggle("show");
-  });
+  // === Toggle del menú móvil ===
+  if (toggleBtn && nav) { // Verificar si los elementos existen
+    toggleBtn.addEventListener("click", () => {
+      const expanded = toggleBtn.getAttribute("aria-expanded") === "true" || false;
+      toggleBtn.setAttribute("aria-expanded", !expanded);
+      nav.classList.toggle("show");
+    });
+  }
 
   // === EVENTOS ===
 
   window.addEventListener("scroll", ajustarHeaderScroll);
 
-  if (saludarBtn && mensajeSaludo) {
+  if (saludarBtn && mensajeSaludo) { // Verificar si ambos elementos existen
     saludarBtn.addEventListener("click", mostrarSaludo);
     saludarBtn.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -64,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll("#main-nav a").forEach(link => {
-    link.addEventListener("click", cerrarMenuMovil);
-  });
+  if (nav) { // Verificar si nav existe
+    document.querySelectorAll("#main-nav a").forEach(link => {
+      link.addEventListener("click", cerrarMenuMovil);
+    });
+  }
 });

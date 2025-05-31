@@ -1,10 +1,32 @@
 /* Fuente general y reseteo */
+:root {
+  --primary-color: #ff6b81;
+  --primary-color-darker: #ff4b65;
+  --background-color: #1e1e1e;
+  --text-color: #f1f1f1;
+  --text-color-light: #ffffff;
+  --secondary-text-color: #ccc;
+  --tertiary-text-color: #aaa;
+  --header-bg-default: #1f73c2; /* Color inicial del header original */
+  --header-bg-scrolled: #005f99; /* Color del header al hacer scroll */
+  --header-bg-fixed: #121212; /* Color del header cuando es fijo y menú móvil */
+  --card-bg: #2a2a2a;
+  --skill-shadow-color: rgba(255, 107, 129, 0.5);
+  --project-shadow-color: rgba(255, 107, 129, 0.3);
+  --link-color-js-animation: #007acc;
+
+  --font-main: 'Poppins', sans-serif;
+  --h2-font-size: 2rem;
+  --section-padding: 4rem 2rem;
+  --max-width-content: 700px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #1e1e1e;
-  color: #f1f1f1;
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* HEADER FIJO */
@@ -13,24 +35,30 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #121212;
+  background-color: var(--header-bg-fixed); /* Cambiado para consistencia con menú móvil */
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start; /* Mantenido de original */
   padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  transition: background-color 0.3s ease; /* Para efecto de scroll */
 }
+
+header.scrolled { /* Nueva clase para JS */
+  background-color: var(--header-bg-scrolled); /* O un color más oscuro si --header-bg-fixed es diferente al inicial */
+}
+
 
 .logo {
   font-weight: 700;
   font-size: 1.3rem;
-  color: #fff;
+  color: var(--text-color-light);
   user-select: none;
 }
 
 .logo .punto {
-  color: #ff6b81;
+  color: var(--primary-color);
 }
 
 /* Botón menú para navegación móvil */
@@ -38,7 +66,7 @@ header {
   background: none;
   border: none;
   font-size: 1.7rem;
-  color: #fff;
+  color: var(--text-color-light);
   cursor: pointer;
   display: none; /* Solo se muestra en móvil con media query */
 }
@@ -48,10 +76,8 @@ nav#main-nav {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 0 10px; /* opcional, para que no pegue con los bordes */
+  padding: 0 10px;
 }
-
-
 
 nav#main-nav ul {
   display: flex;
@@ -61,13 +87,12 @@ nav#main-nav ul {
   margin: 0;
 }
 
-
 nav#main-nav li {
   margin-left: 1.2rem;
 }
 
 nav#main-nav a {
-  color: #f1f1f1;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
@@ -75,19 +100,19 @@ nav#main-nav a {
 
 nav#main-nav a:hover,
 nav#main-nav a:focus {
-  color: #ff6b81;
+  color: var(--primary-color);
 }
 
 /* Sección principal (Hero) */
 .hero {
-  min-height: 100vh; /*Agregue*/
-  margin-top: 0; /* para que no quede detrás del header fijo */
+  min-height: 100vh;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: var(--section-padding);
 }
 
 .hero-content {
@@ -108,19 +133,19 @@ nav#main-nav a:focus {
 .hero-text p {
   font-size: 1.2rem;
   margin: 0;
-  color: #ccc;
+  color: var(--secondary-text-color);
   opacity: 0.5;
 }
 
 .hero-text h1 {
   font-size: 2.8rem;
   margin: 0.2rem 0;
-  color: #ffffff;
+  color: var(--text-color-light);
 }
 
 .hero-text h2 {
   font-weight: 400;
-  color: #cccccc;
+  color: var(--secondary-text-color);
   margin-top: 0;
   opacity: 0.5;
 }
@@ -134,12 +159,12 @@ nav#main-nav a:focus {
   justify-content: center;
 }
 
-.hero-buttons a {
+.hero-buttons a, .btn-outline, .btn-solid { /* Estilo base para botones */
   padding: 0.7rem 1.5rem;
   border-radius: 1.5rem;
-  border: 1px solid #fff;
+  border: 1px solid var(--text-color-light);
   background: transparent;
-  color: #fff;
+  color: var(--text-color-light);
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
@@ -147,10 +172,14 @@ nav#main-nav a:focus {
 }
 
 .hero-buttons a:hover,
-.hero-buttons a:focus {
-  background-color: #ff6b81;
-  border-color: #ff6b81;
-  color: #fff;
+.hero-buttons a:focus,
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-solid:hover, /* btn-solid podría tener otro hover */
+.btn-solid:focus {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-color-light);
 }
 
 /* Iconos sociales (hero-icons) */
@@ -170,43 +199,45 @@ nav#main-nav a:focus {
 
 .hero-icons a:hover img,
 .hero-icons a:focus img {
-  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%);
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Corresponde a --primary-color */
 }
+
+/* Estilos comunes para secciones */
+#sobreMi, #hardSkills, #softSkills, #formacion, #educacion, #proyectos, #contacto {
+  padding: var(--section-padding);
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+/* Estilos comunes para h2 de secciones */
+#sobreMi h2,
+#hardSkills h2,
+#softSkills h2,
+#formacion h2,
+#educacion h2,
+#proyectos h2,
+#contacto h2 {
+  color: var(--text-color-light);
+  margin-bottom: 1.5rem;
+  font-size: var(--h2-font-size);
+  text-align: center;
+}
+#contacto h2 { /* Especificidad para contacto si es diferente */
+  margin-bottom: 1rem;
+}
+
 
 /* Sección Sobre Mí */
 #sobreMi {
-  padding: 6rem 2rem 19rem 2rem;
-  max-width: 700px;
-  margin: 0 auto;
   text-align: center;
 }
-
-#sobreMi h2 {
-  color: #ffffff;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
 #sobreMi p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--secondary-text-color);
 }
 
 /* Hard Skills y Soft Skills */
-#hardSkills, #softSkills {
-  padding: 4rem 2rem 260rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-#hardSkills h2, #softSkills h2 {
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
 #hardSkills ul, #softSkills ul {
   list-style: none;
   padding: 0;
@@ -217,34 +248,21 @@ nav#main-nav a:focus {
 }
 
 #hardSkills ul li, #softSkills ul li {
-  background-color: #2a2a2a;
+  background-color: var(--card-bg);
   padding: 0.6rem 1rem;
   border-radius: 1rem;
   font-weight: 600;
   min-width: 110px;
   text-align: center;
-  color: #f1f1f1;
-  box-shadow: 0 0 5px rgba(255, 107, 129, 0.5);
+  color: var(--text-color);
+  box-shadow: 0 0 5px var(--skill-shadow-color);
 }
 
 /* Formación */
-#formacion {
-  padding: 4rem 2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-#formacion h2 {
-  color: #ffffff;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
 #formacion ul {
   list-style: none;
   padding-left: 1rem;
-  color: #ccc;
+  color: var(--secondary-text-color);
 }
 
 #formacion ul > li {
@@ -254,73 +272,48 @@ nav#main-nav a:focus {
 #formacion ul ul {
   margin-top: 0.3rem;
   padding-left: 1rem;
-  color: #aaa;
+  color: var(--tertiary-text-color);
 }
 
 /* Educación */
 #educacion {
-  padding: 4rem 2rem 15rem;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #ccc;
+  color: var(--secondary-text-color);
 }
-
-#educacion h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
 #educacion p {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
-
 #educacion ul {
   list-style: disc inside;
   max-width: 600px;
   margin: 1rem auto 0 auto;
-  color: #aaa;
+  color: var(--tertiary-text-color);
 }
 
 /* Proyectos */
-#proyectos {
-  padding: 4rem 2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-#proyectos h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
 .proyecto {
-  background-color: #2a2a2a;
+  background-color: var(--card-bg);
   border-radius: 1.5rem;
   padding: 1.5rem 2rem;
   margin-bottom: 1.8rem;
-  box-shadow: 0 0 10px rgba(255, 107, 129, 0.3);
+  box-shadow: 0 0 10px var(--project-shadow-color);
 }
 
 .proyecto h3 {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
-  color: #ff6b81;
+  color: var(--primary-color);
 }
 
 .proyecto p {
   font-size: 1rem;
-  color: #ccc;
+  color: var(--secondary-text-color);
   margin-bottom: 1rem;
 }
 
 .proyecto a {
-  color: #ff6b81;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -328,29 +321,19 @@ nav#main-nav a:focus {
 
 .proyecto a:hover,
 .proyecto a:focus {
-  color: #ff4b65;
+  color: var(--primary-color-darker);
 }
 
 /* Contacto */
 #contacto {
-  padding: 4rem 2rem 19rem;
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin-bottom: 3rem; /* Espacio al final */
   text-align: center;
-  color: #ccc;
+  color: var(--secondary-text-color);
 }
-
-#contacto h2 {
-  color: #fff;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 #contacto p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
-
 #contacto ul {
   list-style: none;
   padding: 0;
@@ -359,14 +342,12 @@ nav#main-nav a:focus {
   gap: 2rem;
   flex-wrap: wrap;
 }
-
 #contacto ul li a {
-  color: #ff6b81;
+  color: var(--primary-color);
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
 }
-
 #contacto ul li a:hover,
 #contacto ul li a:focus {
   text-decoration: underline;
@@ -377,44 +358,42 @@ nav#main-nav a:focus {
   .hero-content {
     flex-direction: column;
   }
-  
+
   header {
     padding: 1rem 1.5rem;
   }
-  
-  nav#main-nav {
+
+  .menu-toggle { /* Mostrar botón de menú en móvil */
+    display: block;
+    margin-left: auto; /* Alinea el botón a la derecha */
+  }
+
+  nav#main-nav { /* Ocultar navegación principal, preparar para menú desplegable */
     display: none;
     flex-direction: column;
-    background-color: #121212;
+    background-color: var(--header-bg-fixed);
     position: absolute;
-    top: 60px;
+    top: 60px; /* Ajustar según la altura del header */
     right: 0;
     width: 200px;
     border-radius: 0 0 0 8px;
     box-shadow: -3px 3px 10px rgba(0,0,0,0.8);
   }
-  
-  nav#main-nav[aria-expanded="true"],
-  nav#main-nav.show {
+
+  nav#main-nav.show { /* Clase para mostrar menú en móvil */
     display: flex;
   }
-  
+
   nav#main-nav ul {
     flex-direction: column;
     padding: 1rem 0;
+    width: 100%; /* Asegurar que la lista ocupe todo el nav desplegable */
   }
-  
+
   nav#main-nav li {
     margin: 0.5rem 0;
-    text-align: right;
-    margin-right:1.5rem;
+    text-align: right; /* O left, o center, según preferencia */
+    padding-right: 1.5rem; /* Ajustar para que no pegue al borde */
+    margin-left: 0; /* Resetear margen izquierdo */
   }
-}
-footer {
-  background-color: #222;
-  color: white;
-  text-align: left;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9em;
 }
