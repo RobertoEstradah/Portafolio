@@ -410,3 +410,11 @@ nav#main-nav a:focus {
     margin-right:1.5rem;
   }
 }
+footer {
+  background-color: #222;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
