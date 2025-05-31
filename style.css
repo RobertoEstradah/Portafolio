@@ -8,7 +8,7 @@
   --secondary-text-color: #ccc;
   --tertiary-text-color: #aaa;
   --header-bg-default: #1f73c2; /* Color inicial del header original */
-  --header-bg-scrolled: #005f99; /* Color del header al hacer scroll */
+  --header-bg-scrolled: #060708; /* Color del header al hacer scroll */
   --header-bg-fixed: #121212; /* Color del header cuando es fijo y menú móvil */
   --card-bg: #2a2a2a;
   --skill-shadow-color: rgba(255, 107, 129, 0.5);
@@ -76,7 +76,7 @@ nav#main-nav {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 0 10px;
+  padding: 0 50px;
 }
 
 nav#main-nav ul {
@@ -366,6 +366,7 @@ nav#main-nav a:focus {
   .menu-toggle { /* Mostrar botón de menú en móvil */
     display: block;
     margin-left: auto; /* Alinea el botón a la derecha */
+    margin-right: 2rem;
   }
 
   nav#main-nav { /* Ocultar navegación principal, preparar para menú desplegable */

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function mostrarSaludo() {
     if (isAnimating || !mensajeSaludo) return; // Verificar si mensajeSaludo existe
     isAnimating = true;
-    mensajeSaludo.textContent = "¡Hola! Bienvenido a mi portafolio de Ciencia de Datos 🚀";
+    mensajeSaludo.textContent = "¡Hola! Bienvenido a mi portafolio de Ciencia de Datos";
     // Color definido en CSS o como variable si se quiere dinámico
     // mensajeSaludo.style.color = "#007acc"; // Se puede manejar con una clase CSS
     // mensajeSaludo.style.fontWeight = "bold"; // Se puede manejar con una clase CSS
