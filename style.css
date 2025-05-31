@@ -1,0 +1,412 @@
+/* Fuente general y reseteo */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* HEADER FIJO */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  user-select: none;
+}
+
+.logo .punto {
+  color: #ff6b81;
+}
+
+/* Botón menú para navegación móvil */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Solo se muestra en móvil con media query */
+}
+
+/* Navegación principal */
+nav#main-nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 10px; /* opcional, para que no pegue con los bordes */
+}
+
+
+
+nav#main-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+nav#main-nav li {
+  margin-left: 1.2rem;
+}
+
+nav#main-nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav#main-nav a:hover,
+nav#main-nav a:focus {
+  color: #ff6b81;
+}
+
+/* Sección principal (Hero) */
+.hero {
+  min-height: 100vh; /*Agregue*/
+  margin-top: 0; /* para que no quede detrás del header fijo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 2rem;
+  margin-bottom: 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #ccc;
+  opacity: 0.5;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin: 0.2rem 0;
+  color: #ffffff;
+}
+
+.hero-text h2 {
+  font-weight: 400;
+  color: #cccccc;
+  margin-top: 0;
+  opacity: 0.5;
+}
+
+/* Botones en hero */
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons a {
+  padding: 0.7rem 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-buttons a:hover,
+.hero-buttons a:focus {
+  background-color: #ff6b81;
+  border-color: #ff6b81;
+  color: #fff;
+}
+
+/* Iconos sociales (hero-icons) */
+.hero-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero-icons a img {
+  width: 32px;
+  height: 32px;
+  filter: invert(30%);
+  transition: filter 0.3s ease;
+}
+
+.hero-icons a:hover img,
+.hero-icons a:focus img {
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%);
+}
+
+/* Sección Sobre Mí */
+#sobreMi {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#sobreMi h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+#sobreMi p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Hard Skills y Soft Skills */
+#hardSkills, #softSkills {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#hardSkills h2, #softSkills h2 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#hardSkills ul, #softSkills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+}
+
+#hardSkills ul li, #softSkills ul li {
+  background-color: #2a2a2a;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  min-width: 110px;
+  text-align: center;
+  color: #f1f1f1;
+  box-shadow: 0 0 5px rgba(255, 107, 129, 0.5);
+}
+
+/* Formación */
+#formacion {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#formacion h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#formacion ul {
+  list-style: none;
+  padding-left: 1rem;
+  color: #ccc;
+}
+
+#formacion ul > li {
+  margin-bottom: 1rem;
+}
+
+#formacion ul ul {
+  margin-top: 0.3rem;
+  padding-left: 1rem;
+  color: #aaa;
+}
+
+/* Educación */
+#educacion {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ccc;
+}
+
+#educacion h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#educacion p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+#educacion ul {
+  list-style: disc inside;
+  max-width: 600px;
+  margin: 1rem auto 0 auto;
+  color: #aaa;
+}
+
+/* Proyectos */
+#proyectos {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#proyectos h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.proyecto {
+  background-color: #2a2a2a;
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 0 10px rgba(255, 107, 129, 0.3);
+}
+
+.proyecto h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #ff6b81;
+}
+
+.proyecto p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.proyecto a {
+  color: #ff6b81;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.proyecto a:hover,
+.proyecto a:focus {
+  color: #ff4b65;
+}
+
+/* Contacto */
+#contacto {
+  padding: 4rem 2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+  color: #ccc;
+}
+
+#contacto h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contacto p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+#contacto ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#contacto ul li a {
+  color: #ff6b81;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+#contacto ul li a:hover,
+#contacto ul li a:focus {
+  text-decoration: underline;
+}
+
+/* Responsive (menú y layout) */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  header {
+    padding: 1rem 1.5rem;
+  }
+  
+  nav#main-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #121212;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 0 8px;
+    box-shadow: -3px 3px 10px rgba(0,0,0,0.8);
+  }
+  
+  nav#main-nav[aria-expanded="true"],
+  nav#main-nav.show {
+    display: flex;
+  }
+  
+  nav#main-nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  
+  nav#main-nav li {
+    margin: 0.5rem 0;
+    text-align: right;
+    margin-right:1.5rem;
+  }
+}
