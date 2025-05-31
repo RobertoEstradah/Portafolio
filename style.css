@@ -16,7 +16,7 @@ header {
   background-color: #121212;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.7);
@@ -175,7 +175,7 @@ nav#main-nav a:focus {
 
 /* Sección Sobre Mí */
 #sobreMi {
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 19rem 2rem;
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
@@ -195,7 +195,7 @@ nav#main-nav a:focus {
 
 /* Hard Skills y Soft Skills */
 #hardSkills, #softSkills {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 260rem;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -259,7 +259,7 @@ nav#main-nav a:focus {
 
 /* Educación */
 #educacion {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 15rem;
   max-width: 700px;
   margin: 0 auto;
   color: #ccc;
@@ -333,7 +333,7 @@ nav#main-nav a:focus {
 
 /* Contacto */
 #contacto {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 19rem;
   max-width: 700px;
   margin: 0 auto 3rem auto;
   text-align: center;
