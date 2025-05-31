@@ -76,6 +76,7 @@ nav#main-nav {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
+  justify-content: flex-end;
   padding: 0 50px;
 }
 
@@ -105,7 +106,7 @@ nav#main-nav a:focus {
 
 /* Sección principal (Hero) */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   margin-top: 0;
   display: flex;
   flex-direction: column;
@@ -119,7 +120,7 @@ nav#main-nav a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .hero-image img {
@@ -152,14 +153,14 @@ nav#main-nav a:focus {
 
 /* Botones en hero */
 .hero-buttons {
-  margin-top: 1.5rem;
+  margin-top: 0.4rem;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.hero-buttons a, .btn-outline, .btn-solid { /* Estilo base para botones */
+.hero-buttons a, .btn-solid { /* Estilo base para botones */
   padding: 0.7rem 1.5rem;
   border-radius: 1.5rem;
   border: 1px solid var(--text-color-light);
@@ -173,8 +174,6 @@ nav#main-nav a:focus {
 
 .hero-buttons a:hover,
 .hero-buttons a:focus,
-.btn-outline:hover,
-.btn-outline:focus,
 .btn-solid:hover, /* btn-solid podría tener otro hover */
 .btn-solid:focus {
   background-color: var(--primary-color);
@@ -190,6 +189,13 @@ nav#main-nav a:focus {
   gap: 1.5rem;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .hero-icons a img {
   width: 32px;
   height: 32px;
@@ -199,6 +205,32 @@ nav#main-nav a:focus {
 
 .hero-icons a:hover img,
 .hero-icons a:focus img {
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Corresponde a --primary-color */
+}
+
+.hero-icons2 {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-icons2 a img {
+  width: 48px;
+  height: 48px;
+  filter: invert(30%);
+  transition: filter 0.3s ease;
+}
+
+.hero-icons2 a:hover img,
+.hero-icons2 a:focus img {
   filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Corresponde a --primary-color */
 }
 
@@ -332,16 +364,9 @@ nav#main-nav a:focus {
 }
 #contacto p {
   margin-bottom: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-#contacto ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
+
 #contacto ul li a {
   color: var(--primary-color);
   font-weight: 600;
@@ -354,7 +379,7 @@ nav#main-nav a:focus {
 }
 
 /* Responsive (menú y layout) */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-content {
     flex-direction: column;
   }
