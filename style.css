@@ -278,6 +278,7 @@ nav#main-nav a:focus {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--secondary-text-color);
+  margin-bottom: -1.5rem;
 }
 
 #sobreMi .section-subtitle {
@@ -313,6 +314,17 @@ nav#main-nav a:focus {
   box-shadow: 0 0 5px var(--skill-shadow-color);
 }
 
+#hardSkills p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: -1.5rem;
+}
+
+#hardSkils .section-subtitle {
+    font-size: .8rem;
+    font-weight: 400;
+}
+
 /* Formación - Modificaciones para centrado vertical del contenido */
 #formacion {
   /* Mantener el padding y max-width existentes para el contenedor general de la sección */
@@ -327,6 +339,16 @@ nav#main-nav a:focus {
   align-items: center; /* Centra el contenido horizontalmente (el h2 y el ul) */
   min-height: 80vh; /* Ajusta la altura mínima de la sección para que justify-content tenga efecto. Puedes probar con 50vh, 70vh, etc. */
   text-align: center; /* Asegura que el h2 se centre dentro de la sección */
+}
+#formacion p {
+  font-size: 1prem;
+  color: var(--secondary-text-color);
+  margin-bottom: -1.5rem;
+}
+
+#formacion .section-subtitle {
+    font-size: .8rem;
+    font-weight: 400;
 }
 
 #formacion h2 {
@@ -388,7 +410,7 @@ nav#main-nav a:focus {
 .proyecto p {
   font-size: 1rem;
   color: var(--secondary-text-color);
-  margin-bottom: 1rem;
+  margin-bottom: -1.5rem;
 }
 
 .proyecto a {
