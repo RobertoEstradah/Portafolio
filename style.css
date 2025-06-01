@@ -191,12 +191,8 @@ nav#main-nav a:focus {
   gap: 1.5rem;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
+/* The previous hero-content had duplicate declaration, removed it based on the original. */
+
 
 .hero-icons a img {
   width: 32px;
@@ -237,7 +233,8 @@ nav#main-nav a:focus {
 }
 
 /* Estilos comunes para secciones */
-#sobreMi, #educacion, #proyectos {
+/* REMOVED #proyectos from this general rule to allow it to expand */
+#sobreMi, #educacion {
   padding: var(--section-padding);
   max-width: var(--max-width-content);
   margin: 0 auto;
@@ -262,7 +259,8 @@ nav#main-nav a:focus {
 #hardSkills h2,
 #softSkills h2,
 #educacion h2,
-#proyectos h2 {
+#proyectos h2,
+#formacion h2 { /* Added #formacion h2 here for consistency */
   color: var(--text-color-light);
   margin-bottom: 1.5rem;
   font-size: var(--h2-font-size);
@@ -271,14 +269,15 @@ nav#main-nav a:focus {
 
 /* Sección Sobre Mí */
 #sobreMi {
-  text-align: center;
+  text-align: center; /* Ensures content is centered */
 }
 
 #sobreMi p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--secondary-text-color);
   margin-bottom: -1.5rem;
+  font-weight: 600;
 }
 
 #sobreMi .section-subtitle {
@@ -286,7 +285,177 @@ nav#main-nav a:focus {
     font-weight: 400;
 }
 
+/* NUEVOS ESTILOS PARA LA SECCIÓN "SOBRE MÍ" */
+
+/* Contenedor principal para la imagen y las tarjetas */
+.about-me-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Por defecto, apilado en móvil */
+  align-items: center; /* Centra horizontalmente en móvil */
+  gap: 2rem; /* Espacio entre la imagen y las tarjetas */
+  margin-bottom: 1rem; /* Espacio antes del párrafo principal */
+  max-width: 90%; /* Ajuste para pantallas más pequeñas */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-me-image {
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.about-me-image img {
+  width: 250px; /* Tamaño de la imagen, similar a la referencia */
+  height: 250px; /* Tamaño fijo para hacerla cuadrada */
+  object-fit: cover;
+  border-radius: 2rem; /* Bordes redondeados, similar a la imagen */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+}
+
+/* Contenedor para las tres tarjetas */
+.about-me-grid-cards {
+  display: grid;
+  /* Minmax ajustado para permitir que las tarjetas sean más pequeñas */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Permitirá que las tarjetas se ajusten entre 200px y lo que el 1fr les dé */
+  gap: 1rem; /* Espacio entre las tarjetas, puedes reducirlo si quieres que estén más pegadas */
+  width: 100%; /* Ocupa todo el ancho disponible en el wrapper */
+  /* Ajustado el max-width para la cuadrícula de tarjetas, para que quepan 3 tarjetas de 200-250px */
+  max-width: 750px; /* 3 tarjetas de 230px + 2 gaps de 1rem (16px) = 690 + 32 = 722px. 750px da un buen margen */
+  margin: 0 auto; /* Centra las tarjetas si hay espacio extra */
+}
+
+.about-me-card {
+  background-color: var(--card-bg); /* Usa tu color de fondo de tarjeta existente */
+  border-radius: 1.5rem;
+  /* === CLAVE PARA LA ALTURA DE LAS TARJETAS === */
+  padding: 0.8rem 1rem; /* REDUCIDO el padding para hacer las tarjetas más compactas */
+  box-shadow: 0 0 10px var(--project-shadow-color); /* Usa tu sombra existente */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* === ALTURA OBJETIVO: similar a la imagen de 250px === */
+  min-height: 220px; /* Ajusta este valor para la altura mínima deseada, cerca de 250px */
+  
+  justify-content: flex-start; /* Alinea el contenido al inicio de la tarjeta */
+}
+
+.about-me-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.6); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.about-me-card .card-icon {
+  width: 40px; /* Aumentado de 20px a 40px para que los iconos sean más visibles */
+  height: 40px;
+  margin-bottom: 0.5rem; /* Reducido el margen inferior */
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Para que el icono coincida con tu primary-color */
+}
+
+.about-me-card h3 {
+  font-size: 1.1rem; /* Reducido de 1.3rem para mayor compacidad */
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 0.4rem; /* Reducido de 0.8rem */
+}
+
+.about-me-card p {
+  font-size: 0.85rem; /* Reducido de 0.95rem para mayor compacidad */
+  color: var(--secondary-text-color);
+  line-height: 1.4; /* Ajustado el interlineado */
+  margin-bottom: 0.6rem; /* Reducido de 1rem */
+  flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+}
+
+.about-me-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0 0.5rem 0; /* Reducidos los márgenes verticales */
+  color: var(--secondary-text-color);
+  text-align: center; /* Alinea los elementos de la lista a la izquierda dentro de la tarjeta */
+  width: 100%;
+}
+
+.about-me-card ul li {
+  margin-bottom: 0.1rem; /* Reducido aún más el margen entre ítems de lista */
+  position: relative;
+}
+
+/* Estilos para el párrafo principal de texto, debajo de la imagen y las tarjetas */
+.about-me-text-main {
+  max-width: var(--max-width-content); /* Limita el ancho del texto para mejor legibilidad */
+  margin: 0 auto; /* Centra el párrafo */
+  padding: 0 1rem; /* Añade padding horizontal */
+}
+
+.about-me-text-main p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+  text-align: justify; /* Justifica el texto para una apariencia más formal */
+  margin-top: 0; /* Asegura que no haya margen superior extra */
+  margin-bottom: 0; /* Asegura que no haya margen inferior extra */
+}
+
+/* MEDIA QUERIES PARA LA SECCIÓN "SOBRE MÍ" */
+/* Media query para pantallas de escritorio (cuando la imagen y tarjetas van lado a lado) */
+@media (min-width: 900px) { /* Ajusta este breakpoint si es necesario */
+  .about-me-content-wrapper {
+    flex-direction: row; /* Coloca la imagen y el grid de tarjetas lado a lado */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    justify-content: center; /* Centra el wrapper completo */
+    max-width: 1000px; /* Ancho máximo para este contenedor en escritorio */
+  }
+
+  .about-me-image {
+    margin-right: 2rem; /* Espacio entre la imagen y el grid de tarjetas */
+  }
+
+  .about-me-grid-cards {
+    flex-grow: 1; /* Permite que el grid de tarjetas ocupe el espacio restante */
+    max-width: 1000px; /* <--- CAMBIA ESTO A UN VALOR MÁS GRANDE */
+  }
+
+  .about-me-card {
+    height: auto; /* Dejar que la altura se ajuste automáticamente al contenido después de los paddings reducidos */
+    /* Puedes probar con una altura fija si el contenido es siempre el mismo y quieres un control exacto: */
+    /* height: 250px; */ /* Si fijas la altura, el contenido podría desbordarse si hay mucho texto */
+  }
+}
+
+/* Media query para pantallas de móvil */
+@media (max-width: 900px) {
+    .about-me-image {
+        display: none; /* Oculta la imagen de perfil en móviles */
+    }
+}
+
 /* Hard Skills y Soft Skills */
+
+#hardSkills {
+  padding: 4rem 2rem 0rem;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+#softSkills {
+  padding: 1rem 2rem;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+/* Estilos comunes para h2 de secciones */
+#sobreMi h2,
+#hardSkills h2,
+#softSkills h2,
+#educacion h2,
+#proyectos h2,
+#formacion h2 { /* Added #formacion h2 here for consistency */
+  color: var(--text-color-light);
+  margin-bottom: 1.5rem;
+  font-size: var(--h2-font-size);
+  text-align: center;
+}
 
 #hardSkills .section-subtitle {
     font-size: .8rem;
@@ -341,14 +510,14 @@ nav#main-nav a:focus {
   text-align: center; /* Asegura que el h2 se centre dentro de la sección */
 }
 #formacion p {
-  font-size: 1prem;
+  font-size: 1rem; /* Corrected typo from 1prem to 1rem */
   color: var(--secondary-text-color);
   margin-bottom: -1.5rem;
 }
 
 #formacion .section-subtitle {
-    font-size: .8rem;
-    font-weight: 400;
+  font-size: .8rem;
+  font-weight: 400;
 }
 
 #formacion h2 {
@@ -379,6 +548,10 @@ nav#main-nav a:focus {
 /* Educación */
 #educacion {
   color: var(--secondary-text-color);
+  padding: var(--section-padding); /* Ensured it has padding */
+  max-width: var(--max-width-content); /* Ensured it has max-width */
+  margin: 0 auto; /* Ensured it's centered */
+  text-align: center; /* Centered text */
 }
 #educacion p {
   font-size: 1.1rem;
@@ -393,44 +566,14 @@ nav#main-nav a:focus {
 }
 
 /* Proyectos */
-.proyecto {
-  background-color: var(--card-bg);
-  border-radius: 1.5rem;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.8rem;
-  box-shadow: 0 0 10px var(--project-shadow-color);
-}
-
-.proyecto h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-  color: var(--primary-color);
-}
-
-.proyecto p {
-  font-size: 1rem;
-  color: var(--secondary-text-color);
-  margin-bottom: -1.5rem;
-}
-
-.proyecto a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.proyecto a:hover,
-.proyecto a:focus {
-  color: var(--primary-color-darker);
-}
+/* Removed .proyecto block as it's not used with project-card structure */
 
 /* Sección Proyectos - Cuadrícula */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem; /* Espacio entre las tarjetas de proyecto */
-  max-width: 1000px; /* Ancho máximo para la cuadrícula */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Ajuste clave: Reduced minmax */
+  gap: 1.5rem; /* Reduced gap */
+  max-width: 1200px; /* Increased max-width for the grid itself */
   margin: 0 auto; /* Centrar la cuadrícula */
   padding: 0 1rem; /* Padding horizontal */
 }
@@ -452,7 +595,7 @@ nav#main-nav a:focus {
 
 .project-card img {
   width: 100%;
-  height: 200px; /* Altura fija para las imágenes, puedes ajustarla */
+  height: 160px; /* Reduced image height */
   object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
   display: block;
   transition: transform 0.3s ease, opacity 0.3s ease;
@@ -466,23 +609,23 @@ nav#main-nav a:focus {
 }
 
 .project-info {
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.2rem; /* Reduced padding */
   flex-grow: 1; /* Permite que el contenido del texto ocupe el espacio restante */
   display: flex;
   flex-direction: column;
 }
 
 .project-info h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* Reduced font size */
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   color: var(--primary-color);
 }
 
 .project-info p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reduced font size */
   color: var(--secondary-text-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   flex-grow: 1; /* Permite que el párrafo se expanda */
 }
 
@@ -493,6 +636,7 @@ nav#main-nav a:focus {
   font-weight: 600;
   transition: color 0.3s ease;
   align-self: flex-start; /* Alinea el botón "Ver en GitHub" a la izquierda */
+  font-size: 0.9rem; /* Optional: reduced font size for link */
 }
 
 .project-link:hover,
@@ -505,24 +649,32 @@ nav#main-nav a:focus {
 #proyectos {
   padding: var(--section-padding);
   text-align: center; /* Centra el título H2 */
-  /* Eliminar max-width y margin: 0 auto; de aquí si la cuadrícula ya los maneja */
+  /* NO max-width o margin: 0 auto; aquí para que la cuadrícula se expanda libremente */
 }
 
 /* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     gap: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
   .project-card img {
-    height: 180px; /* Ajusta la altura de la imagen para móviles */
+    height: 140px; /* Adjust image height for very small mobiles, smaller than desktop */
   }
 
   .project-info {
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1rem; /* Reduce padding on mobiles */
+  }
+
+  .project-info h3 {
+      font-size: 1.1rem; /* Adjust font size on mobiles */
+  }
+
+  .project-info p {
+      font-size: 0.85rem; /* Adjust font size on mobiles */
   }
 }
 /* Contacto - Modificaciones para formulario y centrado */
@@ -550,6 +702,7 @@ nav#main-nav a:focus {
   font-size: 1rem;
   max-width: 600px; /* Ancho máximo para el párrafo de introducción */
   line-height: 1.5;
+  font-weight: 600;
 }
 
 /* Estilos para el contenedor del formulario */
@@ -630,7 +783,7 @@ nav#main-nav a:focus {
 }
 
 /* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .contact-form-container {
     padding: 1.5rem;
     max-width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
@@ -642,7 +795,7 @@ footer {
   flex-shrink: 0; /* Evita que el footer se encoja si el contenido es muy grande */
   background-color: var(--card-bg); /* Ejemplo, puedes usar otra variable o color */
   color: var(--secondary-text-color);
-  padding: 1rem /* Usar variables para consistencia */
+  padding: 1rem; /* Usar variables para consistencia */
 }
 
 footer p {
