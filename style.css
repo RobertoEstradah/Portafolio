@@ -1,0 +1,677 @@
+/* Fuente general y reseteo */
+:root {
+  --primary-color: #ff6b81;
+  --primary-color-darker: #ff4b65;
+  --background-color: #1e1e1e;
+  --text-color: #f1f1f1;
+  --text-color-light: #ffffff;
+  --secondary-text-color: #ccc;
+  --tertiary-text-color: #aaa;
+  --header-bg-default: #1f73c2; /* Color inicial del header original */
+  --header-bg-scrolled: #060708; /* Color del header al hacer scroll */
+  --header-bg-fixed: #121212; /* Color del header cuando es fijo y menú móvil */
+  --card-bg: #2a2a2a;
+  --skill-shadow-color: rgba(255, 107, 129, 0.5);
+  --project-shadow-color: rgba(255, 107, 129, 0.3);
+  --link-color-js-animation: #007acc;
+
+  --font-main: 'Poppins', sans-serif;
+  --h2-font-size: 2rem;
+  --section-padding: 4rem 2rem;
+  --max-width-content: 700px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* HEADER FIJO */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--header-bg-fixed); /* Cambiado para consistencia con menú móvil */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Mantenido de original */
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  transition: background-color 0.3s ease; /* Para efecto de scroll */
+}
+
+header.scrolled { /* Nueva clase para JS */
+  background-color: var(--header-bg-scrolled); /* O un color más oscuro si --header-bg-fixed es diferente al inicial */
+}
+
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-color-light);
+  user-select: none;
+}
+
+.logo .punto {
+  color: var(--primary-color);
+}
+
+/* Botón menú para navegación móvil */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: var(--text-color-light);
+  cursor: pointer;
+  display: none; /* Solo se muestra en móvil con media query */
+}
+
+/* Navegación principal */
+nav#main-nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  justify-content: flex-end;
+  padding: 0 50px;
+  margin-left: auto; /* Alinea el botón a la derecha */
+  margin-right: 0rem;
+}
+
+nav#main-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav#main-nav li {
+  margin-left: 1.2rem;
+}
+
+nav#main-nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav#main-nav a:hover,
+nav#main-nav a:focus {
+  color: var(--primary-color);
+}
+
+/* Sección principal (Hero) */
+.hero {
+  min-height: 90vh;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--section-padding);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 2rem;
+  margin-bottom: 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--secondary-text-color);
+  opacity: 0.5;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin: 0.2rem 0;
+  color: var(--text-color-light);
+}
+
+.hero-text h2 {
+  font-weight: 400;
+  color: var(--secondary-text-color);
+  margin-top: 0;
+  opacity: 0.5;
+}
+
+/* Botones en hero */
+.hero-buttons {
+  margin-top: 0.4rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-buttons a, .btn-solid { /* Estilo base para botones */
+  padding: 0.7rem 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--text-color-light);
+  background: transparent;
+  color: var(--text-color-light);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-buttons a:hover,
+.hero-buttons a:focus,
+.btn-solid:hover, /* btn-solid podría tener otro hover */
+.btn-solid:focus {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+/* Iconos sociales (hero-icons) */
+.hero-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-icons a img {
+  width: 32px;
+  height: 32px;
+  filter: invert(30%);
+  transition: filter 0.3s ease;
+}
+
+.hero-icons a:hover img,
+.hero-icons a:focus img {
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Corresponde a --primary-color */
+}
+
+.hero-icons2 {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hero-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-icons2 a img {
+  width: 48px;
+  height: 48px;
+  filter: invert(30%);
+  transition: filter 0.3s ease;
+}
+
+.hero-icons2 a:hover img,
+.hero-icons2 a:focus img {
+  filter: invert(51%) sepia(73%) saturate(475%) hue-rotate(324deg) brightness(100%) contrast(97%); /* Corresponde a --primary-color */
+}
+
+/* Estilos comunes para secciones */
+#sobreMi, #educacion, #proyectos {
+  padding: var(--section-padding);
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+/* Estilos comunes para secciones */
+
+#hardSkills {
+  padding: 4rem 2rem 0rem;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+#softSkills {
+  padding: 1rem 2rem;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+/* Estilos comunes para h2 de secciones */
+#sobreMi h2,
+#hardSkills h2,
+#softSkills h2,
+#educacion h2,
+#proyectos h2 {
+  color: var(--text-color-light);
+  margin-bottom: 1.5rem;
+  font-size: var(--h2-font-size);
+  text-align: center;
+}
+
+/* Sección Sobre Mí */
+#sobreMi {
+  text-align: center;
+}
+
+#sobreMi p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+}
+
+#sobreMi .section-subtitle {
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+/* Hard Skills y Soft Skills */
+
+#hardSkills .section-subtitle {
+    font-size: .8rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+#hardSkills ul, #softSkills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+}
+
+#hardSkills ul li, #softSkills ul li {
+  background-color: var(--card-bg);
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  min-width: 110px;
+  text-align: center;
+  color: var(--text-color);
+  box-shadow: 0 0 5px var(--skill-shadow-color);
+}
+
+/* Formación - Modificaciones para centrado vertical del contenido */
+#formacion {
+  /* Mantener el padding y max-width existentes para el contenedor general de la sección */
+  padding: var(--section-padding);
+  max-width: var(--max-width-content);
+  margin: 0 auto; /* Centra la sección horizontalmente */
+  
+  /* Nuevas propiedades para centrado vertical del contenido interno */
+  display: flex; /* Convierte la sección en un contenedor flex */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente (el h2 y el ul) */
+  min-height: 80vh; /* Ajusta la altura mínima de la sección para que justify-content tenga efecto. Puedes probar con 50vh, 70vh, etc. */
+  text-align: center; /* Asegura que el h2 se centre dentro de la sección */
+}
+
+#formacion h2 {
+  color: var(--text-color-light);
+  margin-bottom: 1rem; /* Ajusta el margen inferior del h2 si es necesario */
+  font-size: var(--h2-font-size);
+  /* text-align: center; ya se aplica por align-items: center; en la sección padre o por la regla general de h2 */
+}
+
+#formacion ul {
+  list-style: none;
+  padding-left: 0; /* Asegura que no haya padding izquierdo predeterminado que descentre */
+  color: var(--secondary-text-color);
+  max-width: 600px; /* O el ancho que desees para el contenido de la lista */
+  margin: 0 auto; /* Esto centrará el bloque de la lista dentro del flex container */
+  text-align: left; /* Mantén el texto alineado a la izquierda dentro de la lista */
+}
+
+#formacion ul > li {
+  margin-bottom: 1rem;
+}
+
+#formacion ul ul {
+  margin-top: 0.3rem;
+  padding-left: 1rem;
+  color: var(--tertiary-text-color);
+}
+/* Educación */
+#educacion {
+  color: var(--secondary-text-color);
+}
+#educacion p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+#educacion ul {
+  list-style: disc inside;
+  max-width: 600px;
+  margin: 1rem auto 0 auto;
+  color: var(--tertiary-text-color);
+}
+
+/* Proyectos */
+.proyecto {
+  background-color: var(--card-bg);
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 0 10px var(--project-shadow-color);
+}
+
+.proyecto h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.proyecto p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1rem;
+}
+
+.proyecto a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.proyecto a:hover,
+.proyecto a:focus {
+  color: var(--primary-color-darker);
+}
+
+/* Sección Proyectos - Cuadrícula */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Espacio entre las tarjetas de proyecto */
+  max-width: 1000px; /* Ancho máximo para la cuadrícula */
+  margin: 0 auto; /* Centrar la cuadrícula */
+  padding: 0 1rem; /* Padding horizontal */
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 1.5rem;
+  overflow: hidden; /* Para que la imagen respete el border-radius */
+  box-shadow: 0 0 10px var(--project-shadow-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Pequeño levantamiento */
+  box-shadow: 0 8px 20px rgba(255, 107, 129, 0.6); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px; /* Altura fija para las imágenes, puedes ajustarla */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.project-card a:hover img,
+.project-card a:focus img {
+  transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+  opacity: 0.9; /* Pequeña opacidad para indicar interactividad */
+}
+
+.project-info {
+  padding: 1.5rem 2rem;
+  flex-grow: 1; /* Permite que el contenido del texto ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h3 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Permite que el párrafo se expanda */
+}
+
+.project-link {
+  display: inline-block; /* Para que el enlace no ocupe todo el ancho */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  align-self: flex-start; /* Alinea el botón "Ver en GitHub" a la izquierda */
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: var(--primary-color-darker);
+  text-decoration: underline;
+}
+
+/* Ajustes para la sección #proyectos general */
+#proyectos {
+  padding: var(--section-padding);
+  text-align: center; /* Centra el título H2 */
+  /* Eliminar max-width y margin: 0 auto; de aquí si la cuadrícula ya los maneja */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card img {
+    height: 180px; /* Ajusta la altura de la imagen para móviles */
+  }
+
+  .project-info {
+    padding: 1rem 1.5rem;
+  }
+}
+/* Contacto - Modificaciones para formulario y centrado */
+#contacto {
+  margin-bottom: 3rem;
+  color: var(--secondary-text-color);
+  min-height: 80vh; /* Ajusta la altura mínima para el centrado vertical */
+  padding: var(--section-padding); /* Mantenlo para el padding exterior */
+  max-width: var(--max-width-content); /* Mantenlo para el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra la sección horizontalmente */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto */
+}
+
+#contacto h2 {
+  margin-bottom: 1rem;
+}
+
+#contacto p {
+  margin-bottom: 1.5rem; /* Espacio entre el mensaje y el formulario */
+  font-size: 1rem;
+  max-width: 600px; /* Ancho máximo para el párrafo de introducción */
+  line-height: 1.5;
+}
+
+/* Estilos para el contenedor del formulario */
+.contact-form-container {
+  background-color: var(--card-bg); /* Fondo oscuro como las tarjetas */
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 15px var(--project-shadow-color); /* Sombra suave */
+  width: 100%;
+  max-width: 500px; /* Ancho máximo del formulario */
+  margin-bottom: 2rem; /* Espacio entre el formulario y los iconos */
+  text-align: left; /* Alinea los labels a la izquierda dentro del formulario */
+}
+
+/* Estilos para el formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacio entre los grupos de formulario */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color-light);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05); /* Un poco de transparencia */
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 129, 0.3);
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+  min-height: 100px;
+}
+
+.contact-form button[type="submit"] {
+  /* Reutiliza el estilo .btn-solid para consistencia */
+  padding: 0.8rem 2rem;
+  border-radius: 1.5rem;
+  border: none; /* Quitamos el borde para que sea un botón más sólido */
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center; /* Centra el botón dentro del formulario flex */
+  margin-top: 1rem; /* Espacio superior para el botón */
+}
+
+.contact-form button[type="submit"]:hover,
+.contact-form button[type="submit"]:focus {
+  background-color: var(--primary-color-darker);
+  transform: translateY(-2px);
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contact-form-container {
+    padding: 1.5rem;
+    max-width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+  }
+}
+
+footer {
+  
+  flex-shrink: 0; /* Evita que el footer se encoja si el contenido es muy grande */
+  background-color: var(--card-bg); /* Ejemplo, puedes usar otra variable o color */
+  color: var(--secondary-text-color);
+  padding: 1rem /* Usar variables para consistencia */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Responsive (menú y layout) */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu-toggle { /* Mostrar botón de menú en móvil */
+    display: block;
+    margin-left: auto; /* Alinea el botón a la derecha */
+    margin-right: 2rem;
+  }
+
+  nav#main-nav { /* Ocultar navegación principal, preparar para menú desplegable */
+    display: none;
+    flex-direction: column;
+    background-color: var(--header-bg-fixed);
+    position: absolute;
+    top: 60px; /* Ajustar según la altura del header */
+    right: 0;
+    width: 200px;
+    border-radius: 0 0 0 8px;
+    box-shadow: -3px 3px 10px rgba(0,0,0,0.8);
+  }
+
+  nav#main-nav.show { /* Clase para mostrar menú en móvil */
+    display: flex;
+  }
+
+  nav#main-nav ul {
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 100%; /* Asegurar que la lista ocupe todo el nav desplegable */
+  }
+
+  nav#main-nav li {
+    margin: 0.5rem 0;
+    text-align: right; /* O left, o center, según preferencia */
+    padding-right: 1.5rem; /* Ajustar para que no pegue al borde */
+    margin-left: 0; /* Resetear margen izquierdo */
+  }
+}
