@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggleBtn && nav) { // Verificar si los elementos existen
     toggleBtn.addEventListener("click", () => {
       const expanded = toggleBtn.getAttribute("aria-expanded") === "true" || false;
-      toggleBtn.setAttribute("aria- expanded", !expanded);
+      toggleBtn.setAttribute("aria-expanded", !expanded);
       nav.classList.toggle("show");
     });
   }

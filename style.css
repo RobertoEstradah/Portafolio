@@ -273,11 +273,10 @@ nav#main-nav a:focus {
 }
 
 #sobreMi p {
-  font-size: 1rem;
   line-height: 1.5;
   color: var(--secondary-text-color);
   margin-bottom: -1.5rem;
-  font-weight: 600;
+  /*font-weight: 600;*/
 }
 
 #sobreMi .section-subtitle {
@@ -316,10 +315,10 @@ nav#main-nav a:focus {
   display: grid;
   /* Minmax ajustado para permitir que las tarjetas sean más pequeñas */
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Permitirá que las tarjetas se ajusten entre 200px y lo que el 1fr les dé */
-  gap: 1rem; /* Espacio entre las tarjetas, puedes reducirlo si quieres que estén más pegadas */
+  gap: 1.5rem; /* Espacio entre las tarjetas, puedes reducirlo si quieres que estén más pegadas */
   width: 100%; /* Ocupa todo el ancho disponible en el wrapper */
   /* Ajustado el max-width para la cuadrícula de tarjetas, para que quepan 3 tarjetas de 200-250px */
-  max-width: 750px; /* 3 tarjetas de 230px + 2 gaps de 1rem (16px) = 690 + 32 = 722px. 750px da un buen margen */
+  max-width: 750px;  /*3 tarjetas de 230px + 2 gaps de 1rem (16px) = 690 + 32 = 722px. 750px da un buen margen */
   margin: 0 auto; /* Centra las tarjetas si hay espacio extra */
 }
 
@@ -335,7 +334,7 @@ nav#main-nav a:focus {
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* === ALTURA OBJETIVO: similar a la imagen de 250px === */
-  min-height: 220px; /* Ajusta este valor para la altura mínima deseada, cerca de 250px */
+  max-height: 250px; /* Ajusta este valor para la altura mínima deseada, cerca de 250px */
   
   justify-content: flex-start; /* Alinea el contenido al inicio de la tarjeta */
 }
@@ -356,29 +355,17 @@ nav#main-nav a:focus {
   font-size: 1.1rem; /* Reducido de 1.3rem para mayor compacidad */
   color: var(--primary-color);
   margin-top: 0;
-  margin-bottom: 0.4rem; /* Reducido de 0.8rem */
+  margin-bottom: 0.1rem; /* Reducido de 0.8rem */
 }
 
 .about-me-card p {
+  font-size: 0.7rem;
   font-size: 0.85rem; /* Reducido de 0.95rem para mayor compacidad */
   color: var(--secondary-text-color);
   line-height: 1.4; /* Ajustado el interlineado */
   margin-bottom: 0.6rem; /* Reducido de 1rem */
+  margin-top: 0rem;
   flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
-}
-
-.about-me-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.3rem 0 0.5rem 0; /* Reducidos los márgenes verticales */
-  color: var(--secondary-text-color);
-  text-align: center; /* Alinea los elementos de la lista a la izquierda dentro de la tarjeta */
-  width: 100%;
-}
-
-.about-me-card ul li {
-  margin-bottom: 0.1rem; /* Reducido aún más el margen entre ítems de lista */
-  position: relative;
 }
 
 /* Estilos para el párrafo principal de texto, debajo de la imagen y las tarjetas */
@@ -419,7 +406,7 @@ nav#main-nav a:focus {
   .about-me-card {
     height: auto; /* Dejar que la altura se ajuste automáticamente al contenido después de los paddings reducidos */
     /* Puedes probar con una altura fija si el contenido es siempre el mismo y quieres un control exacto: */
-    /* height: 250px; */ /* Si fijas la altura, el contenido podría desbordarse si hay mucho texto */
+    height: 250px;  /* Si fijas la altura, el contenido podría desbordarse si hay mucho texto */
   }
 }
 
@@ -551,7 +538,7 @@ nav#main-nav a:focus {
   padding: var(--section-padding); /* Ensured it has padding */
   max-width: var(--max-width-content); /* Ensured it has max-width */
   margin: 0 auto; /* Ensured it's centered */
-  text-align: center; /* Centered text */
+  text-align: left; /* Centered text */
 }
 #educacion p {
   font-size: 1.1rem;
@@ -694,7 +681,7 @@ nav#main-nav a:focus {
 }
 
 #contacto h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Ajusta el margen inferior del h2 si es necesario */
 }
 
 #contacto p {
