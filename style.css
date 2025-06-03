@@ -540,10 +540,35 @@ nav#main-nav a:focus {
   margin: 0 auto; /* Ensured it's centered */
   text-align: left; /* Centered text */
 }
+
+.educacion-content-wrapper {
+  display: flex;
+  flex-direction: column; /* Por defecto, apilado en móvil */
+  align-items: center; /* Centra horizontalmente en móvil */
+  gap: 2rem; /* Espacio entre la imagen y las tarjetas */
+  margin-bottom: 1rem; /* Espacio antes del párrafo principal */
+  max-width: 90%; /* Ajuste para pantallas más pequeñas */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.educacion-image {
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.educacion-image img {
+  width: 100%; /* Tamaño de la imagen, similar a la referencia */
+  height: auto; /* Tamaño fijo para hacerla cuadrada */
+  object-fit: cover;
+  border-radius: 2rem; /* Bordes redondeados, similar a la imagen */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+}
+
 #educacion p {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.3rem;
+  margin-top: -1.1rem;
 }
 #educacion ul {
   list-style: disc inside;
@@ -551,6 +576,7 @@ nav#main-nav a:focus {
   margin: 1rem auto 0 auto;
   color: var(--tertiary-text-color);
 }
+
 
 /* Proyectos */
 /* Removed .proyecto block as it's not used with project-card structure */
