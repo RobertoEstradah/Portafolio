@@ -35,18 +35,18 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--header-bg-fixed); /* Cambiado para consistencia con menú móvil */
+  background-color: transparent; /* Cambiado para consistencia con menú móvil */
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Mantenido de original */
   padding: 1rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
   transition: background-color 0.3s ease; /* Para efecto de scroll */
 }
 
 header.scrolled { /* Nueva clase para JS */
-  background-color: var(--header-bg-scrolled); /* O un color más oscuro si --header-bg-fixed es diferente al inicial */
+  background-color: transparent;
+  backdrop-filter: blur(1px); /* O un color más oscuro si --header-bg-fixed es diferente al inicial */
 }
 
 
