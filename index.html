@@ -3,374 +3,507 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portafolio de Roberto Estrada</title>
-  <meta name="description" content="Portafolio de Roberto Estrada, Ingeniero de Datos con experiencia en Física, programación, análisis y visualización de datos.">
+  <title>Roberto Estrada — Data Engineer & Computational Physicist</title>
+  <meta name="description" content="Portafolio de Roberto Estrada, Físico Computacional con experiencia en Data Engineering, Machine Learning y Cloud (Azure, GCP).">
   <link rel="icon" href="assets/LOGO.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">robertoestradah<span class="punto">.</span></div>
-    <button
-      id="menu-toggle"
-      class="menu-toggle"
-      aria-label="Abrir o cerrar menú de navegación"
-      aria-expanded="false"
-      aria-controls="main-nav"
-      type="button"
-    >
-      ☰
-    </button>
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
 
-    <nav id="main-nav" aria-label="Menú principal">
-      <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#sobreMi">Sobre mí</a></li>
-        <li><a href="#hardSkills">Skills</a></li>
-        <li><a href="#formacion">Licencias y certificaciones</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="Inicio">
+        robertoestradah<span class="punto">.</span>
+      </a>
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Abrir o cerrar menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-nav"
+        type="button"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="#home" class="nav-link">Inicio</a></li>
+          <li><a href="#sobreMi" class="nav-link">Sobre mí</a></li>
+          <li><a href="#hardSkills" class="nav-link">Skills</a></li>
+          <li><a href="#formacion" class="nav-link">Certificaciones</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#contacto" class="nav-link cta-nav">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section id="home" class="hero">
-      <div class="hero-content">
-        <div class="hero-image">
-          <img src="assets/robertoestradah_about2.jpg" alt="Foto de Roberto Hernández" loading="lazy" />
+      <div class="hero-bg-grid"></div>
+      <div class="hero-glow glow-1"></div>
+      <div class="hero-glow glow-2"></div>
+
+      <div class="hero-inner">
+        <div class="hero-image-wrap">
+          <div class="hero-image-ring"></div>
+          <img
+            src="assets/robertoestradah_about2.jpg"
+            alt="Roberto Estrada"
+            class="hero-photo"
+            loading="eager"
+          />
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Disponible para proyectos
+          </div>
         </div>
+
         <div class="hero-text">
-          <p>Hola, soy</p>
-          <h1>Roberto Estrada</h1>
-          <h2>Físico Computacional || Data Engineering & Cloud</h2>
-          <div class="hero-buttons">
-            <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-outline" download>Descargar CV</a>
-            <a href="#contacto" class="btn-solid">Contáctame</a>
-          </div>
-          <div class="hero-icons">
-            <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          <p class="hero-greeting">Hola, soy</p>
+          <h1 class="hero-name">
+            Roberto<br/><em>Estrada</em>
+          </h1>
+          <p class="hero-role">Físico Computacional · Data Engineering &amp; Cloud</p>
+          <p id="mensajeSaludo" class="mensaje-saludo" aria-live="polite"></p>
+
+          <div class="hero-actions">
+            <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-primary" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar CV
             </a>
-            <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+            <a href="#contacto" class="btn-secondary">Contáctame</a>
+            <button id="saludarBtn" class="btn-ghost" aria-label="Saludar">¡Salúdame!</button>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
             </a>
           </div>
         </div>
       </div>
+
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
-    <section id="sobreMi">
-      <p class="section-subtitle">Conoce más</p>
-      <h2>Sobre mí</h2>
+    <!-- SOBRE MÍ -->
+    <section id="sobreMi" class="section">
+      <div class="section-inner">
+        <div class="section-label">Conoce más</div>
+        <h2 class="section-title">Sobre <em>mí</em></h2>
 
-      <div class="about-me-content-wrapper">
-        <div class="about-me-image">
-          <img src="assets/robertoestradah.jpg" alt="Foto de Roberto Hernández para la sección Sobre Mí" loading="lazy" /> 
-        </div>
-
-        <div class="about-me-grid-cards">
-          <div class="about-me-card">
-            <img src="assets/icons/data-engineering.png" alt="Icono de Ingeniería de Datos" class="card-icon">
-            <h3>Competencia en Datos</h3>
-            <p>Conocimientos sólidos en análisis y modelado de datos, aplicando enfoques cuantitativos.</p>
+        <div class="about-layout">
+          <div class="about-photo-col">
+            <div class="about-photo-frame">
+              <img src="assets/robertoestradah.jpg" alt="Roberto Estrada" loading="lazy" />
             </div>
-
-          <div class="about-me-card">
-            <img src="assets/icons/skills.JPG" alt="Icono de Habilidades" class="card-icon">
-            <h3>Filosofía de trabajo</h3>
-            <p>La resolución de problemas a través del análisis de datos, 
-            buscando la claridad y la aplicabilidad de los resultados.</p>
+            <div class="about-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Cloud</span>
+              <span class="tag">Física</span>
             </div>
+          </div>
 
-          <div class="about-me-card">
-            <img src="assets/icons/education.png" alt="Icono de Educación" class="card-icon">
-            <h3>Metodología de trabajo</h3>
-            <p>Aplicación del método científico: formular hipótesis, experimentar
-            con los datos y validar los resultados de forma rigurosa.</p>
+          <div class="about-text-col">
+            <p class="about-lead">
+              Físico computacional con experiencia demostrada en análisis de datos, machine learning e ingeniería de datos en entornos cloud (Azure y Google Cloud).
+            </p>
+            <p class="about-body">
+              Especializado en transformar grandes volúmenes de datos en insights accionables utilizando Python, Spark y SQL, con el objetivo de optimizar procesos y fundamentar decisiones de negocio.
+            </p>
+
+            <div class="about-cards">
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div>
+                  <h3>Competencia en Datos</h3>
+                  <p>Análisis y modelado con enfoques cuantitativos y rigor científico.</p>
+                </div>
+              </div>
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                  <h3>Metodología Científica</h3>
+                  <p>Formular hipótesis, experimentar con datos y validar resultados.</p>
+                </div>
+              </div>
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div>
+                  <h3>Resultados Aplicables</h3>
+                  <p>Transformar modelos en herramientas de negocio concretas y desplegables.</p>
+                </div>
+              </div>
             </div>
-        </div>
-      </div>
-
-      <div class="about-me-text-main">
-        <p>
-        Físico computacional con experiencia demostrada en análisis de datos, machine learning e ingeniería de datos en
-        entornos cloud (Azure y Google Cloud). Especializado en transformar grandes volúmenes de datos en insights
-        accionables utilizando Python, Spark y SQL, con el objetivo de optimizar procesos y fundamentar decisiones de
-        negocio.
-        </p>
-      </div>
-    </section>
-
-    <section id="hardSkills">
-      <p class="section-subtitle">Habilidades obtenidas</p>
-      <h2>Hard Skills</h2>
-      <ul>
-        <li>Python</li>
-        <li>TensorFlow</li>
-        <li>Keras</li>
-        <li>Azure</li>
-        <li>GitHub</li>
-        <li>PySpark</li>
-        <li>Scikit-Learn</li>
-        <li>Collab</li>
-        <li>Power BI</li>
-        <li>SQL</li>
-        <li>Excel</li>
-        <li>LaTeX</li>
-      </ul>
-    </section>
-
-    <section id="softSkills">
-      <h2>Soft Skills</h2>
-      <ul>
-        <li>Responsabilidad</li>
-        <li>Pragmátismo</li>
-        <li>Comunicación efectiva</li>
-        <li>Trabajo en equipo</li>
-        <li>Resolución de problemas</li>
-        <li>Adaptabilidad</li>
-        <li>Aprendizaje continuo</li>
-        <li>Pensamiento crítico</li>
-        <li>Pensamiento analítico</li>
-      </ul>
-    </section>
-
-    <section id="formacion">
-      <p class="section-subtitle">En continuo progreso</p>
-      <h2>Licencias y certificaciones</h2>
-      <ul>
-        <li>
-          <strong>Google, 2024</strong>
-          <ul>
-            <li>Google AI Essentials</li>
-            <li>Fundamentos de Inteligencia Artificial</li>
-            <li>Certificado de análisis de datos de Google</li>
-            <li>Data Engineering on Google Cloud</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Microsoft, 2024</strong>
-          <ul>
-            <li>Azure AI Fundamentals</li>
-            <li>Business Intelligence con Power BI</li>
-          </ul>
-        </li>
-        <li>
-          <strong>IBM, 2024</strong>
-          <ul>
-            <li>Data Science Professional Certificate</li>
-            <li>Python for Data Science and AI</li>
-            <li>Bootcamp de Ciencia de Datos con Azure (Código Facilito)</li>
-            <li>Bootcamp de DevOps con Azure (Código Facilito)</li>
-          </ul>
-        </li>
-        <li>
-          <strong>University of Michigan, 2024</strong>
-          <ul>
-            <li>Machine Learning with Python</li>
-            <li>SQL para Análisis de Datos</li>
-            <li>Applied Data Science with Python</li>
-          </ul>
-        </li>
-        <li>
-          <strong>University of California, 2024</strong>
-          <ul>
-            <li>Programa especializado: Statistics with Python
-            <li>Fitting Statistical Models to Data with Python</li>
-            <li>Inferential Statistical Analysis with Python</li>
-            <li>Understanding and Visualizing Data with Python</li>
-            <li>Advanced SQL for Data Science</li>
-            <li>Big Data Fundamentals</li>
-          </ul>
-        </li>
-        <li>
-          <strong>IBM, 2024</strong>
-          <ul>
-            <li>Data Analysis with Python</li>
-            <li>Data Visualization with Python</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Sociedad Mexicana de Fisica, 2023</strong>
-          <ul>
-            <li>Proyecto en congreso nacional de física </li>
-          </ul>
-        </li>
-        <li>
-          <strong>Otros cursos</strong>
-          <ul>
-            <li>BSpark con Python, PySpark, Fundación Carlos Slim, DataCamp, entre otros.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    
-    <section id="educacion" aria-label="Educación y competencias fundamentales">
-  
-      <h2>Formación y Competencias Fundamentales</h2>
-      <div class="educacion-content-wrapper">
-          <div class="educacion-image">
-            <img src="assets/educacion/educacion.jpg" alt="Foto de universidad" loading="lazy" /> 
           </div>
-
-    <div class="educacion-header">
-      <p>
-        <strong>Licenciatura en Física</strong> | Universidad Juárez Autónoma de Tabasco | 2019 – 2024
-      </p>
-      <p class="educacion-summary">
-        Formación rigurosa en ciencias teóricas y aplicadas, proveyendo una base robusta para la resolución de problemas cuantitativos complejos en el dominio tecnológico.
-      </p>
-    </div>
-
-    <div class="competencies-grid">
-    
-      <div class="competency-column">
-        <h3>Competencias Derivadas de la Física</h3>
-        <ul>
-          <li><strong>Modelado Abstracto:</strong> Capacidad para traducir fenómenos complejos en modelos matemáticos y simulaciones computacionales.</li>
-          <li><strong>Resolución de Problemas:</strong> Descomposición de problemas ambiguos en componentes manejables y medibles desde primeros principios.</li>
-          <li><strong>Rigor Analítico:</strong> Pensamiento cuantitativo y estadístico para la validación rigurosa de hipótesis y resultados.</li>
-        </ul>
-      </div>
-
-      <div class="competency-column">
-        <h3>Entregables y Productos de Datos</h3>
-        <ul>
-          <li><strong>Modelos Predictivos:</strong> Soluciones de clasificación y regresión para anticipar resultados y evaluar riesgos (ej. scoring crediticio).
-          </li>
-          <li><strong>Dashboards de Business Intelligence:</strong> Paneles interactivos en Power BI para el seguimiento de KPIs y la democratización de los datos.
-          </li>
-          <li><strong>Pipelines de Datos (ETL):</strong> Scripts automatizados para la extracción, transformación y carga de datos, asegurando su calidad y disponibilidad.
-          </li>
-          <li><strong>APIs de Inferencia (ML):</strong> Despliegue de modelos como servicios web para su integración en aplicaciones de negocio.
-          </li>
-        </ul>
-      </div>
-      </section>
-
-    <section id="proyectos">
-      <h2>Proyectos destacados</h2>
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Deteccion de diabetes">
-            <img src="assets/Proyects/prediction-ml-diabetes.jpg" alt="Vista previa de un ML para la deteccion de diabetes" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📊 Predicción de Diabetes</h3>
-            <p>Un modelo de Machine Learning para la detección de diabetes utiliza algoritmos para analizar datos de pacientes.</p>
-            <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Deteccion de retrasos de vuelos">
-            <img src="assets/Proyects/flights.jpg" alt="Vista previa de un ML para la detección de aterrizaje" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📊 Predicción de retraso en aerolíneas</h3>
-            <p>Un modelo de Machine Learning para la detección de llegada en aeorlíneas.</p>
-            <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Red neuronal para predicción de costos de viviendas en GitHub">
-            <img src="assets/Proyects/housing-prediction.jpg" alt="Vista previa de un modelo de red neuronal para predicción de costos de viviendas" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📊 Red neuronal para predicción de costos de viviendas</h3>
-            <p>Modelo en Python con red neuronal para predecir precios de viviendas. Incluye limpieza de datos, entrenamiento y visualización de resultados.</p>
-            <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Evaluación de crédito de clientes en GitHub">
-            <img src="assets/Proyects/credit-evaluation.jpg" alt="Vista previa de un modelo de evaluación de crédito de clientes" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📊 Evaluación de crédito de clientes</h3>
-            <p>Modelo de KNN más cercanos para evaluar el crédito de clientes. Incluye limpieza de datos, entrenamiento y visualización de resultados.</p>
-            <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/Portafolio" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Portafolio web">
-            <img src="assets/Proyects/portafolio.jpg" alt="Vista previa de un Portafolio web" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>💼 Portafolio Web</h3>
-            <p>Portafolio web interactivo con una interfaz amigable para el usuario que permite el desglose de información para terceros.</p>
-            <a href="https://github.com/RobertoEstradah/Portafolio" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Calculadora de funciones en GitHub">
-            <img src="assets/Proyects/function-calculator.jpg" alt="Vista previa de una calculadora de funciones matemáticas" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📈 Calculadora de funciones</h3>
-            <p>Herramienta interactiva que evalúa y grafica funciones matemáticas. Útil como recurso educativo.</p>
-            <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" aria-label="Ver proyecto de Predicción de salario en GitHub">
-            <img src="assets/Proyects/salary-prediction.jpg" alt="Vista previa de un modelo de predicción de salario" loading="lazy">
-          </a>
-          <div class="project-info">
-            <h3>📊 Predicción de salario por medio de años de experiencia laboral</h3>
-            <p>Un modelo de regresión lineal para la predicción de salario de acuerdo a los años de experiencia laboral. Incluye limpieza de datos, entrenamiento y visualización de resultados.</p>
-            <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" class="project-link">Ver en GitHub</a>
-          </div>
-        </article>
-      </div> 
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>No dudes en contactarme para cualquier pregunta o si quieres seguir mi trabajo. ¡Puedes usar el formulario a continuación o mis redes!</p>
-
-      <div class="contact-form-container">
-        <form action="https://formspree.io/f/xwpbejee" method="POST" class="contact-form">
-          <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required aria-label="Tu nombre">
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="_replyto" required aria-label="Tu dirección de correo electrónico">
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required aria-label="Tu mensaje"></textarea>
-          </div>
-          <button type="submit" class="btn-solid">Enviar Mensaje</button>
-        </form>
-      </div>
-
-      <div class="hero-content2">
-        <div class="hero-icons2">
-          <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-          </a>
         </div>
       </div>
     </section>
+
+    <!-- SKILLS -->
+    <section id="hardSkills" class="section section-alt">
+      <div class="section-inner">
+        <div class="section-label">Habilidades obtenidas</div>
+        <h2 class="section-title">Hard <em>Skills</em></h2>
+
+        <div class="skills-grid">
+          <div class="skill-item" data-level="95">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">TensorFlow / Keras</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+          </div>
+          <div class="skill-item" data-level="80">
+            <span class="skill-name">Azure Cloud</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+          </div>
+          <div class="skill-item" data-level="88">
+            <span class="skill-name">PySpark</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="skill-item" data-level="90">
+            <span class="skill-name">Scikit-Learn</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+          </div>
+          <div class="skill-item" data-level="85">
+            <span class="skill-name">SQL</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+          </div>
+          <div class="skill-item" data-level="78">
+            <span class="skill-name">Power BI</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
+          </div>
+          <div class="skill-item" data-level="75">
+            <span class="skill-name">GitHub / DevOps</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+          </div>
+          <div class="skill-item" data-level="72">
+            <span class="skill-name">LaTeX</span>
+            <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
+          </div>
+        </div>
+
+        <div class="soft-skills-wrap">
+          <h3 class="soft-skills-title">Soft Skills</h3>
+          <div class="soft-skills-tags">
+            <span>Responsabilidad</span>
+            <span>Pragmatismo</span>
+            <span>Comunicación efectiva</span>
+            <span>Trabajo en equipo</span>
+            <span>Resolución de problemas</span>
+            <span>Adaptabilidad</span>
+            <span>Aprendizaje continuo</span>
+            <span>Pensamiento crítico</span>
+            <span>Pensamiento analítico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion" class="section">
+      <div class="section-inner">
+        <div class="section-label">En continuo progreso</div>
+        <h2 class="section-title">Licencias y <em>Certificaciones</em></h2>
+
+        <!-- EDUCACIÓN -->
+        <div class="edu-card">
+          <div class="edu-card-accent"></div>
+          <div class="edu-card-content">
+            <div class="edu-degree">Licenciatura en Física</div>
+            <div class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2019 – 2024</div>
+            <p class="edu-desc">Formación rigurosa en ciencias teóricas y aplicadas, proveyendo una base robusta para la resolución de problemas cuantitativos complejos en el dominio tecnológico.</p>
+          </div>
+        </div>
+
+        <div class="certs-grid">
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo google">G</div>
+              <span>Google · 2024</span>
+            </div>
+            <ul class="cert-list">
+              <li>Google AI Essentials</li>
+              <li>Fundamentos de Inteligencia Artificial</li>
+              <li>Certificado de Análisis de Datos de Google</li>
+              <li>Data Engineering on Google Cloud</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo microsoft">M</div>
+              <span>Microsoft · 2024</span>
+            </div>
+            <ul class="cert-list">
+              <li>Azure AI Fundamentals</li>
+              <li>Business Intelligence con Power BI</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo ibm">I</div>
+              <span>IBM · 2024</span>
+            </div>
+            <ul class="cert-list">
+              <li>Data Science Professional Certificate</li>
+              <li>Python for Data Science and AI</li>
+              <li>Data Analysis with Python</li>
+              <li>Data Visualization with Python</li>
+              <li>Bootcamp de Ciencia de Datos con Azure</li>
+              <li>Bootcamp de DevOps con Azure</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo umich">U</div>
+              <span>Univ. of Michigan · 2024</span>
+            </div>
+            <ul class="cert-list">
+              <li>Machine Learning with Python</li>
+              <li>SQL para Análisis de Datos</li>
+              <li>Applied Data Science with Python</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo ucal">U</div>
+              <span>Univ. of California · 2024</span>
+            </div>
+            <ul class="cert-list">
+              <li>Statistics with Python (Especialización)</li>
+              <li>Fitting Statistical Models to Data with Python</li>
+              <li>Inferential Statistical Analysis with Python</li>
+              <li>Understanding and Visualizing Data with Python</li>
+              <li>Advanced SQL for Data Science</li>
+              <li>Big Data Fundamentals</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo smf">S</div>
+              <span>Soc. Mexicana de Física · 2023</span>
+            </div>
+            <ul class="cert-list">
+              <li>Proyecto en Congreso Nacional de Física</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section-alt">
+      <div class="section-inner wide">
+        <div class="section-label">Trabajo selecto</div>
+        <h2 class="section-title">Proyectos <em>destacados</em></h2>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/prediction-ml-diabetes.jpg" alt="Predicción de Diabetes" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>ML</span><span>Python</span><span>Sklearn</span></div>
+              <h3>Predicción de Diabetes</h3>
+              <p>Modelo de Machine Learning para detección de diabetes analizando datos clínicos de pacientes con clasificadores supervisados.</p>
+              <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/flights.jpg" alt="Predicción de retrasos de vuelos" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>PySpark</span><span>Big Data</span></div>
+              <h3>Predicción de Retraso en Aerolíneas</h3>
+              <p>Modelo a gran escala con PySpark para predecir retrasos en llegadas de aerolíneas con datos masivos.</p>
+              <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/housing-prediction.jpg" alt="Red neuronal predicción de viviendas" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>Neural Net</span><span>TensorFlow</span></div>
+              <h3>Red Neuronal para Costos de Vivienda</h3>
+              <p>Red neuronal en Python para predecir precios de viviendas incluyendo limpieza de datos y visualización de resultados.</p>
+              <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/credit-evaluation.jpg" alt="Evaluación de crédito" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>KNN</span><span>Python</span></div>
+              <h3>Evaluación de Crédito de Clientes</h3>
+              <p>Clasificación KNN para evaluar el riesgo crediticio de clientes con limpieza de datos y visualización de resultados.</p>
+              <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/function-calculator.jpg" alt="Calculadora de funciones" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>JavaScript</span><span>Educación</span></div>
+              <h3>Calculadora de Funciones</h3>
+              <p>Herramienta interactiva que evalúa y grafica funciones matemáticas. Útil como recurso educativo.</p>
+              <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" class="project-img-link">
+              <img src="assets/Proyects/salary-prediction.jpg" alt="Predicción de salario" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>Regresión</span><span>Sklearn</span></div>
+              <h3>Predicción de Salario por Experiencia</h3>
+              <p>Regresión lineal para predecir salarios según años de experiencia laboral, con pipeline completo de datos.</p>
+              <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" class="project-link">
+                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="section-inner narrow">
+        <div class="section-label">¿Hablamos?</div>
+        <h2 class="section-title">Ponte en <em>contacto</em></h2>
+        <p class="contact-lead">¿Tienes un proyecto de datos o quieres colaborar? Escríbeme, estaré encantado de responder.</p>
+
+        <div class="contact-layout">
+          <form action="https://formspree.io/f/xwpbejee" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="_replyto" placeholder="tu@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit">
+              Enviar mensaje
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+
+          <div class="contact-aside">
+            <div class="contact-info-block">
+              <h3>Encuéntrame en</h3>
+              <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" class="contact-social">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+                <span>roberto-estradah</span>
+              </a>
+              <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" class="contact-social">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+                <span>RobertoEstradah</span>
+              </a>
+            </div>
+            <div class="contact-cta-box">
+              <p>¿Prefieres el CV directo?</p>
+              <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-secondary" download>Descargar CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <p>Copyright © Roberto Estrada 2025</p>
+    <div class="footer-inner">
+      <span class="footer-logo">robertoestradah<em>.</em></span>
+      <span class="footer-copy">Copyright © Roberto Estrada 2025</span>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub">gh</a>
+      </div>
+    </div>
   </footer>
 
   <script src="scripts.js" defer></script>
