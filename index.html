@@ -10,6 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <!-- Aplica tema antes de render para evitar flash -->
+  <script>
+    (function() {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 </head>
 
 <body>
@@ -34,14 +41,49 @@
       >
         <span></span><span></span><span></span>
       </button>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        aria-label="Cambiar tema claro/oscuro"
+        title="Cambiar tema"
+        type="button"
+      >
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- LANGUAGE SELECTOR -->
+      <div class="lang-selector" id="lang-selector">
+        <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="lang-current">ES</span>
+          <svg class="lang-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="lang-dropdown" id="lang-dropdown" role="listbox">
+          <li role="option" data-lang="es">Español</li>
+          <li role="option" data-lang="en">English</li>
+          <li role="option" data-lang="de">Deutsch</li>
+          <li role="option" data-lang="fr">Français</li>
+        </ul>
+      </div>
+
       <nav id="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="#home" class="nav-link">Inicio</a></li>
-          <li><a href="#sobreMi" class="nav-link">Sobre mí</a></li>
-          <li><a href="#hardSkills" class="nav-link">Skills</a></li>
-          <li><a href="#formacion" class="nav-link">Certificaciones</a></li>
-          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-          <li><a href="#contacto" class="nav-link cta-nav">Contacto</a></li>
+          <li><a href="#home" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="#sobreMi" class="nav-link" data-i18n="nav.about">Sobre mí</a></li>
+          <li><a href="#hardSkills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#formacion" class="nav-link" data-i18n="nav.certs">Certificaciones</a></li>
+          <li><a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+          <li><a href="#contacto" class="nav-link cta-nav" data-i18n="nav.contact">Contacto</a></li>
         </ul>
       </nav>
     </div>
@@ -66,25 +108,25 @@
           />
           <div class="hero-badge">
             <span class="badge-dot"></span>
-            Disponible para proyectos
+            <span data-i18n="hero.badge">Disponible para proyectos</span>
           </div>
         </div>
 
         <div class="hero-text">
-          <p class="hero-greeting">Hola, soy</p>
+          <p class="hero-greeting" data-i18n="hero.greeting">Hola, soy</p>
           <h1 class="hero-name">
             Roberto<br/><em>Estrada</em>
           </h1>
-          <p class="hero-role">Físico Computacional · Data Engineering &amp; Cloud</p>
+          <p class="hero-role" data-i18n="hero.role">Físico Computacional · Data Engineering &amp; Cloud</p>
           <p id="mensajeSaludo" class="mensaje-saludo" aria-live="polite"></p>
 
           <div class="hero-actions">
             <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-primary" download>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Descargar CV
+              <span data-i18n="hero.cv">Descargar CV</span>
             </a>
-            <a href="#contacto" class="btn-secondary">Contáctame</a>
-            <button id="saludarBtn" class="btn-ghost" aria-label="Saludar">¡Salúdame!</button>
+            <a href="#contacto" class="btn-secondary" data-i18n="hero.contact">Contáctame</a>
+            <button id="saludarBtn" class="btn-ghost" aria-label="Saludar" data-i18n="hero.greet">¡Salúdame!</button>
           </div>
 
           <div class="hero-socials">
@@ -109,8 +151,8 @@
     <!-- SOBRE MÍ -->
     <section id="sobreMi" class="section">
       <div class="section-inner">
-        <div class="section-label">Conoce más</div>
-        <h2 class="section-title">Sobre <em>mí</em></h2>
+        <div class="section-label" data-i18n="about.label">Conoce más</div>
+        <h2 class="section-title"><span data-i18n="about.title.pre">Sobre</span> <em data-i18n="about.title.em">mí</em></h2>
 
         <div class="about-layout">
           <div class="about-photo-col">
@@ -126,10 +168,10 @@
           </div>
 
           <div class="about-text-col">
-            <p class="about-lead">
+            <p class="about-lead" data-i18n="about.lead">
               Físico computacional con experiencia demostrada en análisis de datos, machine learning e ingeniería de datos en entornos cloud (Azure y Google Cloud).
             </p>
-            <p class="about-body">
+            <p class="about-body" data-i18n="about.body">
               Especializado en transformar grandes volúmenes de datos en insights accionables utilizando Python, Spark y SQL, con el objetivo de optimizar procesos y fundamentar decisiones de negocio.
             </p>
 
@@ -139,8 +181,8 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
                 <div>
-                  <h3>Competencia en Datos</h3>
-                  <p>Análisis y modelado con enfoques cuantitativos y rigor científico.</p>
+                  <h3 data-i18n="about.card1.title">Competencia en Datos</h3>
+                  <p data-i18n="about.card1.desc">Análisis y modelado con enfoques cuantitativos y rigor científico.</p>
                 </div>
               </div>
               <div class="about-card">
@@ -148,8 +190,8 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
                 <div>
-                  <h3>Metodología Científica</h3>
-                  <p>Formular hipótesis, experimentar con datos y validar resultados.</p>
+                  <h3 data-i18n="about.card2.title">Metodología Científica</h3>
+                  <p data-i18n="about.card2.desc">Formular hipótesis, experimentar con datos y validar resultados.</p>
                 </div>
               </div>
               <div class="about-card">
@@ -157,8 +199,8 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
                 <div>
-                  <h3>Resultados Aplicables</h3>
-                  <p>Transformar modelos en herramientas de negocio concretas y desplegables.</p>
+                  <h3 data-i18n="about.card3.title">Resultados Aplicables</h3>
+                  <p data-i18n="about.card3.desc">Transformar modelos en herramientas de negocio concretas y desplegables.</p>
                 </div>
               </div>
             </div>
@@ -170,8 +212,8 @@
     <!-- SKILLS -->
     <section id="hardSkills" class="section section-alt">
       <div class="section-inner">
-        <div class="section-label">Habilidades obtenidas</div>
-        <h2 class="section-title">Hard <em>Skills</em></h2>
+        <div class="section-label" data-i18n="skills.label">Habilidades obtenidas</div>
+        <h2 class="section-title"><span data-i18n="skills.title.pre">Hard</span> <em>Skills</em></h2>
 
         <div class="skills-grid">
           <div class="skill-item" data-level="95">
@@ -213,17 +255,17 @@
         </div>
 
         <div class="soft-skills-wrap">
-          <h3 class="soft-skills-title">Soft Skills</h3>
+          <h3 class="soft-skills-title" data-i18n="skills.soft.title">Soft Skills</h3>
           <div class="soft-skills-tags">
-            <span>Responsabilidad</span>
-            <span>Pragmatismo</span>
-            <span>Comunicación efectiva</span>
-            <span>Trabajo en equipo</span>
-            <span>Resolución de problemas</span>
-            <span>Adaptabilidad</span>
-            <span>Aprendizaje continuo</span>
-            <span>Pensamiento crítico</span>
-            <span>Pensamiento analítico</span>
+            <span data-i18n="skills.soft.s1">Responsabilidad</span>
+            <span data-i18n="skills.soft.s2">Pragmatismo</span>
+            <span data-i18n="skills.soft.s3">Comunicación efectiva</span>
+            <span data-i18n="skills.soft.s4">Trabajo en equipo</span>
+            <span data-i18n="skills.soft.s5">Resolución de problemas</span>
+            <span data-i18n="skills.soft.s6">Adaptabilidad</span>
+            <span data-i18n="skills.soft.s7">Aprendizaje continuo</span>
+            <span data-i18n="skills.soft.s8">Pensamiento crítico</span>
+            <span data-i18n="skills.soft.s9">Pensamiento analítico</span>
           </div>
         </div>
       </div>
@@ -232,25 +274,25 @@
     <!-- FORMACIÓN -->
     <section id="formacion" class="section">
       <div class="section-inner">
-        <div class="section-label">En continuo progreso</div>
-        <h2 class="section-title">Licencias y <em>Certificaciones</em></h2>
+        <div class="section-label" data-i18n="certs.label">En continuo progreso</div>
+        <h2 class="section-title"><span data-i18n="certs.title.pre">Licencias y</span> <em data-i18n="certs.title.em">Certificaciones</em></h2>
 
         <!-- EDUCACIÓN -->
         <div class="edu-card">
           <div class="edu-card-accent"></div>
           <div class="edu-card-content">
-            <div class="edu-degree">Maestría en Ciencias de la Computación</div>
+            <div class="edu-degree" data-i18n="edu.master">Maestría en Ciencias de la Computación</div>
             <div class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2025 </div>
-            <p class="edu-desc">Especialización en computación avanzada y métodos computacionales.</p>
+            <p class="edu-desc" data-i18n="edu.master.desc">Especialización en computación avanzada y métodos computacionales.</p>
           </div>
         </div>
 
         <div class="edu-card">
           <div class="edu-card-accent"></div>
           <div class="edu-card-content">
-            <div class="edu-degree">Licenciatura en Física</div>
+            <div class="edu-degree" data-i18n="edu.bachelor">Licenciatura en Física</div>
             <div class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2019 – 2024</div>
-            <p class="edu-desc">Formación rigurosa en ciencias teóricas y aplicadas, proveyendo una base robusta para la resolución de problemas cuantitativos complejos en el dominio tecnológico.</p>
+            <p class="edu-desc" data-i18n="edu.bachelor.desc">Formación rigurosa en ciencias teóricas y aplicadas, proveyendo una base robusta para la resolución de problemas cuantitativos complejos en el dominio tecnológico.</p>
           </div>
         </div>
 
@@ -339,8 +381,8 @@
     <!-- PROYECTOS -->
     <section id="proyectos" class="section section-alt">
       <div class="section-inner wide">
-        <div class="section-label">Trabajo selecto</div>
-        <h2 class="section-title">Proyectos <em>destacados</em></h2>
+        <div class="section-label" data-i18n="projects.label">Trabajo selecto</div>
+        <h2 class="section-title"><span data-i18n="projects.title.pre">Proyectos</span> <em data-i18n="projects.title.em">destacados</em></h2>
 
         <div class="projects-grid">
 
@@ -453,35 +495,35 @@
     <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="section-inner narrow">
-        <div class="section-label">¿Hablamos?</div>
-        <h2 class="section-title">Ponte en <em>contacto</em></h2>
-        <p class="contact-lead">¿Tienes un proyecto de datos o quieres colaborar? Escríbeme, estaré encantado de responder.</p>
+        <div class="section-label" data-i18n="contact.label">¿Hablamos?</div>
+        <h2 class="section-title"><span data-i18n="contact.title.pre">Ponte en</span> <em data-i18n="contact.title.em">contacto</em></h2>
+        <p class="contact-lead" data-i18n="contact.lead">¿Tienes un proyecto de datos o quieres colaborar? Escríbeme, estaré encantado de responder.</p>
 
         <div class="contact-layout">
           <form action="https://formspree.io/f/xwpbejee" method="POST" class="contact-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+                <label for="name" data-i18n="contact.form.name">Nombre</label>
+                <input type="text" id="name" name="name" data-i18n-placeholder="contact.form.namePh" placeholder="Tu nombre" required />
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="_replyto" placeholder="tu@email.com" required />
+                <label for="email" data-i18n="contact.form.email">Email</label>
+                <input type="email" id="email" name="_replyto" data-i18n-placeholder="contact.form.emailPh" placeholder="tu@email.com" required />
               </div>
             </div>
             <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+              <label for="message" data-i18n="contact.form.message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" data-i18n-placeholder="contact.form.messagePh" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
             </div>
             <button type="submit" class="btn-primary form-submit">
-              Enviar mensaje
+              <span data-i18n="contact.form.send">Enviar mensaje</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
           </form>
 
           <div class="contact-aside">
             <div class="contact-info-block">
-              <h3>Encuéntrame en</h3>
+              <h3 data-i18n="contact.find">Encuéntrame en</h3>
               <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" class="contact-social">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 LinkedIn
@@ -494,8 +536,8 @@
               </a>
             </div>
             <div class="contact-cta-box">
-              <p>¿Prefieres el CV directo?</p>
-              <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-secondary" download>Descargar CV</a>
+              <p data-i18n="contact.cvAsk">¿Prefieres el CV directo?</p>
+              <a href="documents/CURRICULUM VINTAE - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-secondary" download data-i18n="hero.cv">Descargar CV</a>
             </div>
           </div>
         </div>
