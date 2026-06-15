@@ -361,7 +361,7 @@ nav#main-nav ul {
   z-index: 2;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 2rem;
+  border-radius: var(--radius-xl);
   padding: 0.4rem 1rem;
   font-size: 0.75rem;
   font-weight: 500;
@@ -415,7 +415,7 @@ nav#main-nav ul {
   color: var(--accent);
   opacity: 0;
   min-height: 1.4em;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition);
   margin-bottom: 0.5rem;
 }
 
@@ -529,7 +529,7 @@ nav#main-nav ul {
   object-fit: cover;
   border-radius: var(--radius-xl);
   border: 2px solid var(--border);
-  transition: transform 0.4s;
+  transition: transform var(--transition);
 }
 .about-photo-frame:hover img { transform: scale(1.03); }
 
@@ -546,7 +546,7 @@ nav#main-nav ul {
   color: var(--accent);
   background: rgba(37,99,235,0.1);
   border: 1px solid rgba(37,99,235,0.22);
-  border-radius: 2rem;
+  border-radius: var(--radius-xl);
   padding: 0.25rem 0.7rem;
 }
 
@@ -844,7 +844,7 @@ nav#main-nav ul {
   color: var(--accent);
   background: rgba(37,99,235,0.1);
   border: 1px solid rgba(37,99,235,0.2);
-  border-radius: 2rem;
+  border-radius: var(--radius-xl);
   padding: 0.2rem 0.6rem;
   letter-spacing: 0.04em;
 }
@@ -1069,7 +1069,7 @@ footer {
 }
 [data-theme="light"] .project-overlay { background: rgba(245,245,247,0.0); }
 [data-theme="light"] .project-card:hover .project-overlay { background: rgba(245,245,247,0.25); }
-[data-theme="light"] .project-overlay span { color: #111118; }
+[data-theme="light"] .project-overlay span { color: var(--text); }
 [data-theme="light"] .nav-link:hover,
 [data-theme="light"] .nav-link:focus {
   background: rgba(0,0,0,0.05);
@@ -1179,7 +1179,7 @@ footer {
   border-radius: var(--radius-sm);
   cursor: pointer;
   color: var(--text-muted);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.04em;
