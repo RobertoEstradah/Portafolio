@@ -3,12 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roberto Estrada — Data Engineer & Computational Physicist</title>
-  <meta name="description" content="Portafolio de Roberto Estrada, Físico Computacional con experiencia en Data Engineering, Machine Learning y Cloud (Azure, GCP).">
-  <link rel="icon" href="assets/LOGO.png" type="image/png" />
+  <title>Roberto Estrada - Data Engineer & Computational Physicist</title>
+  <meta name="description" content="Portafolio de Roberto Estrada, Físico Computacional y Data Engineer. Especialista en Python, PySpark, Azure y GCP. Disponible para proyectos de datos y ML.">
+  <meta name="author" content="Roberto Estrada">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://robertoestradah.com/" />
+  <meta property="og:title"       content="Roberto Estrada - Data Engineer & Físico Computacional" />
+  <meta property="og:description" content="Especialista en Data Engineering, Machine Learning y Cloud (Azure, GCP). Disponible para proyectos." />
+  <meta property="og:image"       content="https://robertoestradah.com/assets/robertoestradah_perfil.jpg" />
+  <meta property="og:site_name"   content="Roberto Estrada | Portfolio" />
+  <meta property="og:locale"      content="es_MX" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Roberto Estrada - Data Engineer & Físico Computacional" />
+  <meta name="twitter:description" content="Data Engineering, Machine Learning y Cloud (Azure, GCP)." />
+  <meta name="twitter:image"       content="https://robertoestradah.com/assets/robertoestradah_perfil.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/LOGO.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/LOGO.png" sizes="180x180" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.simpleicons.org">
+  <link rel="dns-prefetch" href="https://cdn.simpleicons.org">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  </noscript>
   <link rel="stylesheet" href="style.css" />
   <!-- Aplica tema antes de render para evitar flash -->
   <script>
@@ -21,12 +52,10 @@
 
 <body>
 
-  <!-- CURSOR PERSONALIZADO -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-ring"></div>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
   <!-- HEADER -->
-  <header id="site-header">
+  <header id="site-header" role="banner">
     <div class="header-inner">
       <a href="#home" class="logo" aria-label="Inicio">
         robertoestradah<span class="punto">.</span>
@@ -39,7 +68,7 @@
         aria-controls="main-nav"
         type="button"
       >
-        <span></span><span></span><span></span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
       <button
         id="theme-toggle"
@@ -49,14 +78,14 @@
         type="button"
       >
         <!-- Sun icon (shown in dark mode) -->
-        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg aria-hidden="true" class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
           <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
           <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
         </svg>
         <!-- Moon icon (shown in light mode) -->
-        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg aria-hidden="true" class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
       </button>
@@ -80,6 +109,7 @@
         <ul>
           <li><a href="#home" class="nav-link" data-i18n="nav.home">Inicio</a></li>
           <li><a href="#sobreMi" class="nav-link" data-i18n="nav.about">Sobre mí</a></li>
+          <li><a href="#experiencia" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
           <li><a href="#hardSkills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
           <li><a href="#formacion" class="nav-link" data-i18n="nav.certs">Certificaciones</a></li>
           <li><a href="#proyectos" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
@@ -89,7 +119,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
     <section id="home" class="hero">
@@ -102,9 +132,10 @@
           <div class="hero-image-ring"></div>
           <img
             src="assets/robertoestradah_perfil.jpg"
-            alt="Roberto Estrada"
+            alt="Roberto Estrada, Data Engineer y Físico Computacional"
             class="hero-photo"
             loading="eager"
+            width="280" height="280"
           />
           <div class="hero-badge">
             <span class="badge-dot"></span>
@@ -118,24 +149,25 @@
             Roberto<br/><em>Estrada</em>
           </h1>
           <p class="hero-role" data-i18n="hero.role">Físico Computacional · Data Engineering &amp; Cloud</p>
-          <p id="mensajeSaludo" class="mensaje-saludo" aria-live="polite"></p>
-
           <div class="hero-actions">
-            <a href="documents/CV - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-primary" download>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <a href="#proyectos" class="btn-primary">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span data-i18n="hero.projects">Ver proyectos</span>
+            </a>
+            <a href="documents/CV - ROBERTO HERNANDEZ ESTRADA.pdf" class="btn-secondary" download>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span data-i18n="hero.cv">Descargar CV</span>
             </a>
-            <a href="#contacto" class="btn-secondary" data-i18n="hero.contact">Contáctame</a>
-            <button id="saludarBtn" class="btn-ghost" aria-label="Saludar" data-i18n="hero.greet">¡Salúdame!</button>
+            <a href="#contacto" class="btn-ghost" data-i18n="hero.contact">Contáctame</a>
           </div>
 
           <div class="hero-socials">
-            <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://www.linkedin.com/in/roberto-estradah/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn - abre en nueva pestaña" class="social-link">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
             </a>
-            <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" aria-label="GitHub - abre en nueva pestaña" class="social-link">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               GitHub
             </a>
           </div>
@@ -157,7 +189,7 @@
         <div class="about-layout">
           <div class="about-photo-col">
             <div class="about-photo-frame">
-              <img src="assets/robertoestradah_code.jpg" alt="Roberto Estrada" loading="lazy" />
+              <img src="assets/robertoestradah_code.jpg" alt="Roberto Estrada trabajando frente a una computadora" loading="lazy" />
             </div>
             <div class="about-tags">
               <span class="tag">Python</span>
@@ -178,7 +210,7 @@
             <div class="about-cards">
               <div class="about-card">
                 <div class="about-card-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
                 <div>
                   <h3 data-i18n="about.card1.title">Competencia en Datos</h3>
@@ -187,7 +219,7 @@
               </div>
               <div class="about-card">
                 <div class="about-card-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
                 <div>
                   <h3 data-i18n="about.card2.title">Metodología Científica</h3>
@@ -196,7 +228,7 @@
               </div>
               <div class="about-card">
                 <div class="about-card-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
                 <div>
                   <h3 data-i18n="about.card3.title">Resultados Aplicables</h3>
@@ -209,49 +241,226 @@
       </div>
     </section>
 
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="section">
+      <div class="section-inner">
+        <div class="section-label" data-i18n="exp.label">Trayectoria profesional</div>
+        <h2 class="section-title"><span data-i18n="exp.title.pre">Experiencia</span> <em data-i18n="exp.title.em">Profesional</em></h2>
+
+        <div class="exp-timeline">
+
+          <div class="exp-card">
+            <div class="exp-card-meta">
+              <span class="exp-period">Mayo 2026 – Actualidad</span>
+              <span class="exp-badge exp-badge-current">Actual</span>
+              <img src="https://static.tildacdn.net/tild3865-3038-4637-b935-656665643031/algonova.svg" alt="Algonova" class="exp-logo">
+            </div>
+            <h3 class="exp-role">Mathematics &amp; CS Instructor · Tech Mentor</h3>
+            <div class="exp-company">Algonova (by Algorithmics) · Remoto · Tiempo parcial</div>
+            <ul class="exp-bullets">
+              <li>Diseño e imparto clases de programación (Scratch, Python, Roblox/Lua) y matemáticas para estudiantes jóvenes con metodologías internacionales.</li>
+              <li>Desarrollo material didáctico y proyectos prácticos que fomentan lógica computacional, creatividad y pensamiento algorítmico.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-card-meta">
+              <span class="exp-period">Agosto 2022 – Diciembre 2024</span>
+              <img src="https://www.ujat.mx/Content/images/escudo.png" alt="UJAT" class="exp-logo">
+            </div>
+            <h3 class="exp-role">Instructor · Asesor Técnico</h3>
+            <div class="exp-company">Tutorías de Ciencias Exactas, Matemáticas y Computacionales · Cunduacán, Tabasco</div>
+            <ul class="exp-bullets">
+              <li>Instrucción personalizada en algoritmos y estructuras de datos con Python para resolución de problemas de ingeniería.</li>
+              <li>Asesoría en librerías científicas (NumPy, Pandas, Matplotlib) para análisis y visualización de fenómenos físicos.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-card-meta">
+              <span class="exp-period">Octubre 2023</span>
+            </div>
+            <h3 class="exp-role">Investigador · Análisis de Datos</h3>
+            <div class="exp-company">Congreso Nacional de Física LXVI · Sociedad Mexicana de Física · Morelia, Michoacán</div>
+            <ul class="exp-bullets">
+              <li>Investigación sobre generación de sonido mediante efecto termoacústico empleando sensores de temperatura y sonido.</li>
+              <li>Análisis de datos de sensores para predicción de anomalías. Constancia SMF ID LXVI-007129, área estado sólido.</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-card-meta">
+              <span class="exp-period">Octubre 2022</span>
+              <img src="https://www.ujat.mx/Content/images/escudo.png" alt="UJAT" class="exp-logo">
+            </div>
+            <h3 class="exp-role">Soporte en Análisis y Visualización de Datos</h3>
+            <div class="exp-company">Semana de Divulgación Científica · UJAT · Cunduacán, Tabasco</div>
+            <ul class="exp-bullets">
+              <li>Desarrollo de scripts en Python para análisis de datos y generación de reportes automatizados.</li>
+              <li>Análisis y comparación de colores mediante visualizaciones con Matplotlib y Seaborn.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="hardSkills" class="section section-alt">
       <div class="section-inner">
         <div class="section-label" data-i18n="skills.label">Habilidades obtenidas</div>
         <h2 class="section-title"><span data-i18n="skills.title.pre">Hard</span> <em>Skills</em></h2>
 
-        <div class="skills-grid">
-          <div class="skill-item" data-level="95">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+        <div class="skills-categories">
+
+          <!-- Lenguajes -->
+          <div class="skill-category">
+            <h3 class="skill-cat-label" data-i18n="skills.cat.languages">Lenguajes de Programación</h3>
+            <div class="skill-pills-grid">
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Python</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">SQL</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="R" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">R</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scala/scala-original.svg" alt="Scala" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Scala</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">JavaScript</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg" alt="Lua" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Lua</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-item" data-level="85">
-            <span class="skill-name">TensorFlow / Keras</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+
+          <!-- Machine Learning & IA -->
+          <div class="skill-category">
+            <h3 class="skill-cat-label" data-i18n="skills.cat.ml">Machine Learning & IA</h3>
+            <div class="skill-pills-grid">
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">PyTorch</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">TensorFlow / Keras</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Scikit-Learn</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" alt="PySpark" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">PySpark</span>
+              </div>
+              <div class="skill-pill">
+                <svg role="img" aria-label="Claude Code" class="skill-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="color:#CC785C;">
+                  <path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017L3.674 20H0L6.57 3.52zm-.702 10.7h4.47L11.157 7.02 6.867 14.22z" fill="currentColor"/>
+                </svg>
+                <span class="skill-pill-name">Claude Code</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-item" data-level="80">
-            <span class="skill-name">Azure Cloud</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+
+          <!-- Análisis de Datos -->
+          <div class="skill-category">
+            <h3 class="skill-cat-label" data-i18n="skills.cat.data">Análisis de Datos</h3>
+            <div class="skill-pills-grid">
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Pandas</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">NumPy</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Matplotlib</span>
+              </div>
+              <div class="skill-pill">
+                <svg role="img" aria-label="Seaborn" class="skill-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="50" height="50" rx="6" fill="#4C72B0"/>
+                  <circle cx="13" cy="13" r="4" fill="#fff" opacity=".9"/>
+                  <circle cx="37" cy="13" r="4" fill="#fff" opacity=".9"/>
+                  <circle cx="13" cy="37" r="4" fill="#fff" opacity=".9"/>
+                  <circle cx="37" cy="37" r="4" fill="#fff" opacity=".9"/>
+                  <circle cx="25" cy="25" r="5" fill="#fff" opacity=".9"/>
+                  <line x1="13" y1="13" x2="25" y2="25" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+                  <line x1="37" y1="13" x2="25" y2="25" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+                  <line x1="13" y1="37" x2="25" y2="25" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+                  <line x1="37" y1="37" x2="25" y2="25" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+                </svg>
+                <span class="skill-pill-name">Seaborn</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-item" data-level="88">
-            <span class="skill-name">PySpark</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+
+          <!-- Cloud & Big Data -->
+          <div class="skill-category">
+            <h3 class="skill-cat-label" data-i18n="skills.cat.cloud">Cloud & Big Data</h3>
+            <div class="skill-pills-grid">
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Cloud" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Azure Cloud</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Google Cloud</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/powerbi.svg" alt="Power BI" class="skill-icon skill-icon-powerbi" loading="lazy">
+                <span class="skill-pill-name">Power BI</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">MySQL</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-item" data-level="90">
-            <span class="skill-name">Scikit-Learn</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+
+          <!-- Herramientas & Dev -->
+          <div class="skill-category">
+            <h3 class="skill-cat-label" data-i18n="skills.cat.tools">Herramientas & Dev</h3>
+            <div class="skill-pills-grid">
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="skill-icon skill-icon-invert" loading="lazy">
+                <span class="skill-pill-name">GitHub</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Docker</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">VS Code</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/nvidia/76B900" alt="CUDA" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">CUDA</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg" alt="LaTeX" class="skill-icon skill-icon-invert" loading="lazy">
+                <span class="skill-pill-name">LaTeX</span>
+              </div>
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/roblox/E00000" alt="Roblox Studio" class="skill-icon" loading="lazy">
+                <span class="skill-pill-name">Roblox Studio</span>
+              </div>
+            </div>
           </div>
-          <div class="skill-item" data-level="85">
-            <span class="skill-name">SQL</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
-          </div>
-          <div class="skill-item" data-level="78">
-            <span class="skill-name">Power BI</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
-          </div>
-          <div class="skill-item" data-level="75">
-            <span class="skill-name">GitHub / DevOps</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
-          </div>
-          <div class="skill-item" data-level="72">
-            <span class="skill-name">LaTeX</span>
-            <div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div>
-          </div>
+
         </div>
 
         <div class="soft-skills-wrap">
@@ -281,17 +490,17 @@
         <div class="edu-card">
           <div class="edu-card-accent"></div>
           <div class="edu-card-content">
-            <div class="edu-degree" data-i18n="edu.master">Maestría en Ciencias de la Computación</div>
-            <div class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2025 </div>
-            <p class="edu-desc" data-i18n="edu.master.desc">Especialización en computación avanzada y métodos computacionales.</p>
+            <h3 class="edu-degree" data-i18n="edu.master">Maestría en Ciencias Computacionales</h3>
+            <p class="edu-institution">Universidad Juárez Autónoma de Tabasco · Agosto 2025 – Actualidad</p>
+            <p class="edu-desc" data-i18n="edu.master.desc">Especialización en aprendizaje profundo (Deep Learning), visión artificial y minería de datos de alto rendimiento.</p>
           </div>
         </div>
 
         <div class="edu-card">
           <div class="edu-card-accent"></div>
           <div class="edu-card-content">
-            <div class="edu-degree" data-i18n="edu.bachelor">Licenciatura en Física</div>
-            <div class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2019 – 2024</div>
+            <h3 class="edu-degree" data-i18n="edu.bachelor">Licenciatura en Física</h3>
+            <p class="edu-institution">Universidad Juárez Autónoma de Tabasco · 2019 – 2024</p>
             <p class="edu-desc" data-i18n="edu.bachelor.desc">Formación rigurosa en ciencias teóricas y aplicadas, proveyendo una base robusta para la resolución de problemas cuantitativos complejos en el dominio tecnológico.</p>
           </div>
         </div>
@@ -300,7 +509,14 @@
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo google">G</div>
+              <div class="cert-issuer-logo google">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-label="Google">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+              </div>
               <span>Google · 2024</span>
             </div>
             <ul class="cert-list">
@@ -313,7 +529,14 @@
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo microsoft">M</div>
+              <div class="cert-issuer-logo microsoft">
+                <svg role="img" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-label="Microsoft">
+                  <rect x="1" y="1" width="9" height="9" fill="#F25022"/>
+                  <rect x="11" y="1" width="9" height="9" fill="#7FBA00"/>
+                  <rect x="1" y="11" width="9" height="9" fill="#00A4EF"/>
+                  <rect x="11" y="11" width="9" height="9" fill="#FFB900"/>
+                </svg>
+              </div>
               <span>Microsoft · 2024</span>
             </div>
             <ul class="cert-list">
@@ -324,7 +547,7 @@
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo ibm">I</div>
+              <div class="cert-issuer-logo ibm">IBM</div>
               <span>IBM · 2024</span>
             </div>
             <ul class="cert-list">
@@ -332,14 +555,65 @@
               <li>Python for Data Science and AI</li>
               <li>Data Analysis with Python</li>
               <li>Data Visualization with Python</li>
-              <li>Bootcamp de Ciencia de Datos con Azure</li>
-              <li>Bootcamp de DevOps con Azure</li>
             </ul>
           </div>
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo umich">U</div>
+              <div class="cert-issuer-logo anthropic">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-label="Anthropic">
+                  <path d="M13.827 3.52h3.603L24 20h-3.603l-6.57-16.48zm-7.258 0h3.767L16.906 20h-3.674l-1.343-3.461H5.017L3.674 20H0L6.57 3.52zm-.702 10.7h4.47L11.157 7.02 6.867 14.22z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span>Anthropic · 2026</span>
+            </div>
+            <ul class="cert-list">
+              <li>Introduction to Agent Skills, Jun. 2026</li>
+              <li>AI Fluency for Students, Abr. 2026</li>
+              <li>AI Fluency for Educators, Mar. 2026</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo codigofacilito">
+                <img src="https://codigofacilito.com/assets/iso-2c915b58698845df3902effd7a958111fef40aab4c8c13db1db519b37fc1b2e8.png" alt="Código Facilito" width="26" height="26" style="object-fit:contain; border-radius:50%;">
+              </div>
+              <span>Código Facilito · 2024–2025</span>
+            </div>
+            <ul class="cert-list">
+              <li>Bootcamp de Ciencia de Datos, Jul. 2025</li>
+              <li>Curso de Machine Learning, Jul. 2025</li>
+              <li>Bootcamp de Ciencia de Datos con Azure, Dic. 2024</li>
+              <li>Bootcamp de DevOps con Azure, Dic. 2024</li>
+              <li>Análisis de datos con Python, Nov. 2024</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo platzi">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-label="Platzi">
+                  <path d="M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm0 1.41l9.172 5.295v10.59L12 22.59l-9.172-5.295V6.705L12 1.41zM6.97 8.293l-1.232.713 4.762 8.245 1.232-.713-4.762-8.245zm2.832-1.63l-1.232.712 4.762 8.246 1.232-.713-4.762-8.245zm2.836-1.63l-1.232.713 4.762 8.245 1.232-.712-4.762-8.246z" fill="#98CA3F"/>
+                </svg>
+              </div>
+              <span>Platzi · 2024–2025</span>
+            </div>
+            <ul class="cert-list">
+              <li>Curso de ETL e Ingesta de Datos con Python, Abr. 2025</li>
+              <li>Curso de Análisis Exploratorio de Datos, Abr. 2025</li>
+              <li>Fundamentos de ETL con Python y Pentaho, Nov. 2024</li>
+              <li>Cálculo Diferencial para Data Science e IA, Abr. 2025</li>
+            </ul>
+          </div>
+
+          <div class="cert-group">
+            <div class="cert-issuer">
+              <div class="cert-issuer-logo umich">
+                <svg role="img" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" width="24" height="19" aria-label="University of Michigan">
+                  <path d="M0,80 L0,0 L20,0 L50,40 L80,0 L100,0 L100,80 L80,80 L80,26 L50,64 L20,26 L20,80 Z" fill="#FFCB05"/>
+                </svg>
+              </div>
               <span>Univ. of Michigan · 2024</span>
             </div>
             <ul class="cert-list">
@@ -351,7 +625,11 @@
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo ucal">U</div>
+              <div class="cert-issuer-logo ucal">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-label="University of California">
+                  <path d="M17,5.5 A8,8,0,1,0,17,18.5" fill="none" stroke="#FDB515" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+              </div>
               <span>Univ. of California · 2024</span>
             </div>
             <ul class="cert-list">
@@ -366,7 +644,14 @@
 
           <div class="cert-group">
             <div class="cert-issuer">
-              <div class="cert-issuer-logo smf">S</div>
+              <div class="cert-issuer-logo smf">
+                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22" aria-label="Sociedad Mexicana de Física">
+                  <circle cx="12" cy="12" r="2" fill="#fff"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="3.5" fill="none" stroke="#fff" stroke-width="1.3"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="3.5" fill="none" stroke="#fff" stroke-width="1.3" transform="rotate(60 12 12)"/>
+                  <ellipse cx="12" cy="12" rx="10" ry="3.5" fill="none" stroke="#fff" stroke-width="1.3" transform="rotate(120 12 12)"/>
+                </svg>
+              </div>
               <span>Soc. Mexicana de Física · 2023</span>
             </div>
             <ul class="cert-list">
@@ -387,6 +672,25 @@
         <div class="projects-grid">
 
           <article class="project-card">
+            <a href="https://github.com/RobertoEstradah/optical-speckle-pinn" target="_blank" rel="noopener noreferrer" class="project-img-link" aria-label="Ver proyecto: Simulación de Speckle Óptico con PINNs - abre en nueva pestaña">
+              <img src="assets/Proyects/housing-prediction.jpg" alt="Red neuronal SIREN para simulación de speckle óptico" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>PINNs</span><span>PyTorch</span><span>Physics</span></div>
+              <h3>Simulación de Speckle Óptico con PINNs</h3>
+              <div class="project-slide">
+                <p>Tesis de Maestría: red SIREN en PyTorch que resuelve la ecuación de Helmholtz para simular moteado óptico, con error L2 &lt; 5% y pipeline reproducible con optimizador Adam + L-BFGS.</p>
+                <a href="https://github.com/RobertoEstradah/optical-speckle-pinn" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver proyecto PINNs en GitHub - abre en nueva pestaña">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
             <a href="https://hr-churn-predictor.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-img-link">
               <img src="assets/Proyects/hr-churn-predictor.jpg" alt="Predictor de Rotación de Personal" loading="lazy"/>
               <div class="project-overlay">
@@ -396,10 +700,12 @@
             <div class="project-body">
               <div class="project-tags"><span>ML</span><span>Python</span><span>Flask</span></div>
               <h3>Predictor de Rotación de Personal</h3>
-              <p>Aplicación web que predice la rotación de empleados mediante modelos de clasificación, ayudando a los equipos de RRHH a identificar perfiles en riesgo.</p>
-              <a href="https://hr-churn-predictor.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Aplicación web que predice la rotación de empleados mediante modelos de clasificación, ayudando a los equipos de RRHH a identificar perfiles en riesgo.</p>
+                <a href="https://hr-churn-predictor.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -413,10 +719,12 @@
             <div class="project-body">
               <div class="project-tags"><span>PySpark</span><span>Big Data</span></div>
               <h3>Predicción de Retraso en Aerolíneas</h3>
-              <p>Modelo a gran escala con PySpark para predecir retrasos en llegadas de aerolíneas con datos masivos.</p>
-              <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Modelo a gran escala con PySpark para predecir retrasos en llegadas de aerolíneas con datos masivos.</p>
+                <a href="https://github.com/RobertoEstradah/pyspark-flight-delay-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -430,10 +738,12 @@
             <div class="project-body">
               <div class="project-tags"><span>Neural Net</span><span>TensorFlow</span></div>
               <h3>Red Neuronal para Costos de Vivienda</h3>
-              <p>Red neuronal en Python para predecir precios de viviendas incluyendo limpieza de datos y visualización de resultados.</p>
-              <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Red neuronal en Python para predecir precios de viviendas incluyendo limpieza de datos y visualización de resultados.</p>
+                <a href="https://github.com/RobertoEstradah/neural-network-prediction-housing" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -447,10 +757,12 @@
             <div class="project-body">
               <div class="project-tags"><span>ML</span><span>Python</span><span>Sklearn</span></div>
               <h3>Predicción de Diabetes</h3>
-              <p>Modelo de Machine Learning para detección de diabetes analizando datos clínicos de pacientes con clasificadores supervisados.</p>
-              <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Modelo de Machine Learning para detección de diabetes analizando datos clínicos de pacientes con clasificadores supervisados.</p>
+                <a href="https://github.com/RobertoEstradah/diabetes-ml-prediction" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -464,10 +776,12 @@
             <div class="project-body">
               <div class="project-tags"><span>KNN</span><span>Python</span></div>
               <h3>Evaluación de Crédito de Clientes</h3>
-              <p>Clasificación KNN para evaluar el riesgo crediticio de clientes con limpieza de datos y visualización de resultados.</p>
-              <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Clasificación KNN para evaluar el riesgo crediticio de clientes con limpieza de datos y visualización de resultados.</p>
+                <a href="https://github.com/RobertoEstradah/Customer-credit-evaluation-using-k-nn-classification" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -481,16 +795,18 @@
             <div class="project-body">
               <div class="project-tags"><span>Regresión</span><span>Sklearn</span></div>
               <h3>Predicción de Salario por Experiencia</h3>
-              <p>Regresión lineal para predecir salarios según años de experiencia laboral, con pipeline completo de datos.</p>
-              <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Regresión lineal para predecir salarios según años de experiencia laboral, con pipeline completo de datos.</p>
+                <a href="https://github.com/RobertoEstradah/Salary-prediction-linearregression" target="_blank" rel="noopener noreferrer" class="project-link">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
           <article class="project-card">
-            <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-img-link">
-              <img src="assets/Proyects/function-calculator.jpg" alt="Calculadora de funciones" loading="lazy"/>
+            <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-img-link" aria-label="Ver proyecto: Calculadora de Funciones - abre en nueva pestaña">
+              <img src="assets/Proyects/function-calculator.jpg" alt="Calculadora de funciones matemáticas" loading="lazy"/>
               <div class="project-overlay">
                 <span>Ver en GitHub →</span>
               </div>
@@ -498,10 +814,31 @@
             <div class="project-body">
               <div class="project-tags"><span>JavaScript</span><span>Educación</span></div>
               <h3>Calculadora de Funciones</h3>
-              <p>Herramienta interactiva que evalúa y grafica funciones matemáticas. Útil como recurso educativo.</p>
-              <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-link">
-                Ver proyecto <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-              </a>
+              <div class="project-slide">
+                <p>Herramienta interactiva que evalúa y grafica funciones matemáticas. Útil como recurso educativo.</p>
+                <a href="https://github.com/RobertoEstradah/Calculadora-de-funciones" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Calculadora de Funciones en GitHub - abre en nueva pestaña">
+                  Ver proyecto <span class="arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" class="project-img-link" aria-label="Ver proyectos en GitHub - abre en nueva pestaña">
+              <img src="assets/Proyects/portafolio.jpg" alt="Sistema de generación de CVs con agentes de IA y Claude Code" loading="lazy"/>
+              <div class="project-overlay">
+                <span>Ver en GitHub →</span>
+              </div>
+            </a>
+            <div class="project-body">
+              <div class="project-tags"><span>Claude Code</span><span>Python</span><span>IA</span></div>
+              <h3>Sistema de CVs con Agentes de IA</h3>
+              <div class="project-slide">
+                <p>Sistema personal de adaptación de CVs a vacantes con Claude Code: agentes personalizados (analista, redactor LaTeX, revisor), scraping propio de LinkedIn/OCC y flujos automatizados.</p>
+                <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver perfil GitHub de Roberto Estrada - abre en nueva pestaña">
+                  Ver GitHub <span class="arrow">→</span>
+                </a>
+              </div>
             </div>
           </article>
 
@@ -521,11 +858,11 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name" data-i18n="contact.form.name">Nombre</label>
-                <input type="text" id="name" name="name" data-i18n-placeholder="contact.form.namePh" placeholder="Tu nombre" required />
+                <input type="text" id="name" name="name" autocomplete="name" data-i18n-placeholder="contact.form.namePh" placeholder="Tu nombre" required />
               </div>
               <div class="form-group">
                 <label for="email" data-i18n="contact.form.email">Email</label>
-                <input type="email" id="email" name="_replyto" data-i18n-placeholder="contact.form.emailPh" placeholder="tu@email.com" required />
+                <input type="email" id="email" name="_replyto" autocomplete="email" data-i18n-placeholder="contact.form.emailPh" placeholder="tu@email.com" required />
               </div>
             </div>
             <div class="form-group">
@@ -534,8 +871,9 @@
             </div>
             <button type="submit" class="btn-primary form-submit">
               <span data-i18n="contact.form.send">Enviar mensaje</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             </button>
+            <div id="form-status" role="alert" aria-live="assertive" class="sr-only"></div>
           </form>
 
           <div class="contact-aside">
@@ -547,9 +885,16 @@
                 <span>roberto-estradah</span>
               </a>
               <a href="https://github.com/RobertoEstradah" target="_blank" rel="noopener noreferrer" class="contact-social">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 GitHub
                 <span>RobertoEstradah</span>
+              </a>
+              <a href="https://wa.me/522298736656" target="_blank" rel="noopener noreferrer" class="contact-social" aria-label="WhatsApp - abre en nueva pestaña">
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="#25D366">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+                <span>+52 229 873 6656</span>
               </a>
             </div>
             <div class="contact-cta-box">
@@ -563,7 +908,7 @@
 
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="footer-inner">
       <span class="footer-logo">robertoestradah<em>.</em></span>
       <span class="footer-copy">© Copyright 2025 Roberto Estrada</span>
