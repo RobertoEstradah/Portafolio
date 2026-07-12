@@ -1159,6 +1159,15 @@ nav#main-nav ul {
   margin-top: 0;
 }
 
+#proyectos .section-title { margin-bottom: 0.9rem; }
+.projects-lead {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
 /* Cada tarjeta de proyecto crece independiente */
 .projects-grid { align-items: start; }
 
