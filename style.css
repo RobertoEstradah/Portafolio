@@ -144,6 +144,7 @@ nav#main-nav ul {
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
+  white-space: nowrap;
   transition: color var(--transition), background var(--transition);
 }
 .nav-link:not(.cta-nav)::after {
